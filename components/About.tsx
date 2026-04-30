@@ -35,10 +35,10 @@ export default function About() {
             className="space-y-6 text-slate-300 text-lg leading-relaxed"
           >
             <p>
-              Halo! Saya seorang <strong>Fullstack Web Developer</strong> yang bersemangat menciptakan produk digital yang tidak hanya fungsional, tetapi juga memberikan pengalaman visual yang memukau.
+              Halo! Saya seorang <strong>Web Developer</strong> yang bersemangat menciptakan produk digital yang tidak hanya fungsional, tetapi juga memberikan pengalaman visual yang memukau.
             </p>
             <p>
-              Dengan pengalaman lebih dari 3 tahun dalam pengembangan aplikasi web modern, saya selalu mencari tantangan baru untuk mengubah ide kompleks menjadi antarmuka yang bersih, intuitif, dan responsif.
+              Saya berpengalaman dalam membangun berbagai solusi digital mulai dari website apps, landing page, CMS, hingga sistem ERP web. Saya berkomitmen untuk mengubah ide kompleks menjadi antarmuka yang bersih, intuitif, dan responsif.
             </p>
             <p>
               Saat tidak sedang <em>ngoding</em>, Anda akan menemukan saya sedang membaca tentang tren desain UI/UX terbaru, atau bereksperimen dengan teknologi web 3D.

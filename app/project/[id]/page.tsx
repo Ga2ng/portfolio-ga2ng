@@ -165,7 +165,7 @@ export default function ProjectDetail() {
                   </div>
                   <div>
                     <span className="block text-slate-500 mb-1">Peran</span>
-                    <span className="text-slate-300">Fullstack Developer</span>
+                    <span className="text-slate-300">Web Developer</span>
                   </div>
                 </div>
               </div>

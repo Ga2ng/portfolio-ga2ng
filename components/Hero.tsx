@@ -22,7 +22,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6"
         >
-          Fullstack Web <br className="hidden md:block" />
+          Web <br className="hidden md:block" />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7c3aed] to-[#a855f7] drop-shadow-[0_0_25px_rgba(124,58,237,0.3)]">
             Developer
           </span>

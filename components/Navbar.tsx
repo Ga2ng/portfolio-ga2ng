@@ -35,7 +35,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 max-w-6xl flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#7c3aed] to-[#a855f7]">
-          G&apos;Dev
+          Ga2ng
         </Link>
 
         {/* Desktop Nav */}
