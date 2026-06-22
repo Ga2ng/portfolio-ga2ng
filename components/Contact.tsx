@@ -1,162 +1,157 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, MapPin, Mail, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+
+function SectionLabel({ num, label }: { num: string; label: string }) {
+  return (
+    <div className="flex items-center gap-3 mb-10">
+      <span className="text-[11px] font-mono text-[#7c3aed]">{num}</span>
+      <span className="h-px w-8 bg-[#7c3aed]/60" />
+      <span className="text-[11px] font-bold tracking-[0.3em] text-[#a855f7] uppercase">{label}</span>
+    </div>
+  );
+}
+
+const CONTACT_ITEMS = [
+  {
+    icon: <Mail size={18} />,
+    label: "Email",
+    value: "gagangprakasa@gmail.com",
+    href: "mailto:gagangprakasa@gmail.com",
+  },
+  {
+    icon: <Phone size={18} />,
+    label: "WhatsApp",
+    value: "+62 813-9038-2131",
+    href: "https://wa.me/6281390382131",
+  },
+  {
+    icon: <MapPin size={18} />,
+    label: "Lokasi",
+    value: "Surabaya, Jawa Timur",
+    href: null,
+  },
+];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setIsSuccess(false), 3000);
-    }, 1500);
-  };
-
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="container mx-auto max-w-5xl">
+    <section id="contact" className="relative py-28 px-6 overflow-hidden">
+      {/* Center dot grid */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-25"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(124,58,237,0.14) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+          maskImage: "radial-gradient(ellipse 80% 60% at 50% 100%, black, transparent)",
+          WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 100%, black, transparent)",
+        }}
+      />
+
+      <div className="container mx-auto max-w-5xl relative">
+        <SectionLabel num="04" label="Let's Connect" />
+
+        {/* Big CTA heading */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-20"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Hubungi <span className="text-[#a855f7]">Saya</span></h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] mx-auto rounded-full glow"></div>
+          <h2 className="text-5xl md:text-7xl font-black tracking-tight leading-[0.95] mb-6">
+            Ada proyek<br />
+            <span
+              className="bg-clip-text text-transparent"
+              style={{ backgroundImage: "linear-gradient(135deg, #c4b5fd, #a855f7, #7c3aed)" }}
+            >
+              di pikiran?
+            </span>
+          </h2>
+          <p className="text-slate-300 text-base max-w-md leading-relaxed">
+            Saya terbuka untuk kolaborasi, freelance, dan diskusi proyek. Jangan ragu — langsung hubungi saja.
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-5 gap-12">
-          {/* Contact Info */}
+        <div className="grid md:grid-cols-2 gap-10 items-start">
+          {/* Contact cards */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="md:col-span-2 space-y-8"
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="space-y-3"
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Mari Berkoneksi</h3>
-            <p className="text-slate-400 mb-8">
-              Tertarik bekerja sama atau punya pertanyaan? Jangan ragu untuk menghubungi. Saya sering merespon dalam waktu 24 jam.
-            </p>
-            
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 text-slate-300">
-                <div className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-[#a855f7]">
-                  <Mail size={20} />
+            {CONTACT_ITEMS.map((item) => (
+              <div
+                key={item.label}
+                className="group flex items-center gap-4 p-5 rounded-2xl border border-white/[0.05] hover:border-[#7c3aed]/30 transition-colors duration-300"
+                style={{ background: "rgba(255,255,255,0.02)" }}
+              >
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center text-[#a855f7] flex-shrink-0 border border-[#7c3aed]/20"
+                  style={{ background: "rgba(124,58,237,0.08)" }}
+                >
+                  {item.icon}
                 </div>
-                <a href="mailto:gagangprakasa@gmail.com" className="hover:text-[#a855f7] transition-colors">gagangprakasa@gmail.com</a>
-              </div>
-              <div className="flex items-center gap-4 text-slate-300">
-                <div className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-[#a855f7]">
-                  <MapPin size={20} />
+                <div className="min-w-0">
+                  <p className="text-[10px] font-mono text-[#7c3aed] tracking-widest uppercase mb-0.5">{item.label}</p>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="text-sm font-semibold text-slate-200 hover:text-[#c4b5fd] transition-colors truncate block"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="text-sm font-semibold text-slate-200 truncate">{item.value}</p>
+                  )}
                 </div>
-                <span>Surabaya, Jawa Timur, Indonesia</span>
               </div>
-              <div className="flex items-center gap-4 text-slate-300">
-                <div className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-[#a855f7]">
-                  <Phone size={20} />
-                </div>
-                <a href="tel:081390382131" className="hover:text-[#a855f7] transition-colors">+62 813-9038-2131</a>
-              </div>
-            </div>
+            ))}
           </motion.div>
 
-          {/* Contact Form */}
+          {/* CTA box */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="md:col-span-3 glass-card p-8 rounded-2xl relative overflow-hidden"
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="p-8 rounded-2xl border border-[#7c3aed]/20 relative overflow-hidden"
+            style={{ background: "rgba(124,58,237,0.04)" }}
           >
-            {/* Disabled Overlay */}
-            <div className="absolute inset-0 bg-[#0f0a1f]/85 backdrop-blur-sm z-10 flex flex-col items-center justify-center p-6 text-center">
-              <div className="w-14 h-14 rounded-full bg-[#7c3aed]/10 border border-[#7c3aed]/30 flex items-center justify-center text-[#a855f7] mb-4">
-                <Mail size={28} />
-              </div>
-              <h4 className="text-lg font-bold text-white mb-2">Formulir Kontak Dinonaktifkan</h4>
-              <p className="text-slate-400 text-sm max-w-sm mb-6">
-                Formulir kirim pesan belum aktif. Silakan hubungi saya secara langsung melalui Email atau WhatsApp.
-              </p>
-              <div className="flex flex-wrap gap-3 justify-center">
-                <a
-                  href="mailto:gagangprakasa@gmail.com"
-                  className="px-5 py-2.5 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] rounded-full text-white font-medium text-xs shadow-[0_0_15px_rgba(124,58,237,0.4)] hover:scale-105 transition-all"
-                >
-                  Kirim Email
-                </a>
-                <a
-                  href="https://wa.me/6281390382131"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2.5 bg-green-600 rounded-full text-white font-medium text-xs shadow-[0_0_15px_rgba(22,163,74,0.4)] hover:scale-105 transition-all"
-                >
-                  Hubungi via WhatsApp
-                </a>
-              </div>
-            </div>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-2 gap-6">
-                <div className="col-span-2 sm:col-span-1 space-y-2">
-                  <label className="text-sm text-slate-400 font-medium">Nama</label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full bg-[#0f0a1f]/50 border border-[#7c3aed]/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#7c3aed] transition-colors"
-                    placeholder="John Doe"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  />
-                </div>
-                <div className="col-span-2 sm:col-span-1 space-y-2">
-                  <label className="text-sm text-slate-400 font-medium">Email</label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full bg-[#0f0a1f]/50 border border-[#7c3aed]/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#7c3aed] transition-colors"
-                    placeholder="john@example.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  />
-                </div>
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm text-slate-400 font-medium">Pesan</label>
-                <textarea
-                  required
-                  rows={5}
-                  className="w-full bg-[#0f0a1f]/50 border border-[#7c3aed]/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#7c3aed] transition-colors resize-none"
-                  placeholder="Ceritakan tentang proyek Anda..."
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                ></textarea>
-              </div>
+            {/* Glow accent */}
+            <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#7c3aed]/10 blur-3xl pointer-events-none" />
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full py-4 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] rounded-lg text-white font-semibold shadow-[0_0_15px_rgba(124,58,237,0.3)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all flex justify-center items-center gap-2 disabled:opacity-70"
+            <p className="text-[11px] font-mono text-[#7c3aed] tracking-widest uppercase mb-4">Preferred</p>
+            <p className="text-2xl font-black text-white mb-2 leading-tight">
+              Hubungi via<br />WhatsApp atau Email
+            </p>
+            <p className="text-slate-400 text-sm mb-8 leading-relaxed">
+              Formulir kontak belum aktif. Saya biasanya membalas dalam 24 jam kerja.
+            </p>
+
+            <div className="flex flex-col gap-3">
+              <a
+                href="mailto:gagangprakasa@gmail.com"
+                className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-sm font-bold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]"
+                style={{ background: "linear-gradient(135deg, #7c3aed, #a855f7)", boxShadow: "0 0 28px rgba(124,58,237,0.35)" }}
               >
-                {isSubmitting ? (
-                  <span className="animate-pulse">Mengirim...</span>
-                ) : isSuccess ? (
-                  <span>Pesan Terkirim! 🎉</span>
-                ) : (
-                  <>Kirim Pesan <Send size={20} /></>
-                )}
-              </button>
-            </form>
+                <Mail size={16} />
+                Kirim Email
+              </a>
+              <a
+                href="https://wa.me/6281390382131"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-sm font-bold text-white border border-white/[0.08] hover:border-[#7c3aed]/40 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                style={{ background: "rgba(255,255,255,0.03)" }}
+              >
+                <Phone size={16} />
+                Chat WhatsApp
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>

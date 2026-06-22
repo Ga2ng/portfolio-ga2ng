@@ -2,64 +2,129 @@
 
 import { motion } from "framer-motion";
 
-export default function About() {
-  const skills = [
-    { name: "Laravel", level: "Utama / Expert" },
-    { name: "MySQL", level: "Utama / Expert" },
-    { name: "PHP", level: "Expert" },
-    { name: "React / Next.js", level: "Menengah (Landing Page)" },
-    { name: "Tailwind CSS", level: "Lanjutan / Advanced" },
-    { name: "Bootstrap", level: "Lanjutan / Advanced" },
-  ];
+const SKILLS = [
+  { name: "Laravel", level: "Expert", pct: 95 },
+  { name: "MySQL", level: "Expert", pct: 92 },
+  { name: "PHP", level: "Expert", pct: 90 },
+  { name: "React / Next.js", level: "Intermediate", pct: 68 },
+  { name: "Tailwind CSS", level: "Advanced", pct: 85 },
+  { name: "Bootstrap", level: "Advanced", pct: 83 },
+];
 
+const FACTS = [
+  { label: "Domisili", value: "Surabaya, JTM" },
+  { label: "Spesialisasi", value: "Laravel · MySQL" },
+  { label: "Status", value: "Open to Work" },
+  { label: "Email", value: "gagangprakasa@gmail.com" },
+];
+
+function SectionLabel({ num, label }: { num: string; label: string }) {
   return (
-    <section id="about" className="py-24 px-6">
-      <div className="container mx-auto max-w-5xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Tentang <span className="text-[#a855f7]">Saya</span></h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] mx-auto rounded-full glow"></div>
-        </motion.div>
+    <div className="flex items-center gap-3 mb-10">
+      <span className="text-[11px] font-mono text-[#7c3aed]">{num}</span>
+      <span className="h-px w-8 bg-[#7c3aed]/60" />
+      <span className="text-[11px] font-bold tracking-[0.3em] text-[#a855f7] uppercase">{label}</span>
+    </div>
+  );
+}
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+export default function About() {
+  return (
+    <section id="about" className="relative py-28 px-6 overflow-hidden">
+      {/* Subtle background dot grid */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-30"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(124,58,237,0.12) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+          maskImage: "radial-gradient(ellipse 70% 100% at 20% 50%, black, transparent)",
+          WebkitMaskImage: "radial-gradient(ellipse 70% 100% at 20% 50%, black, transparent)",
+        }}
+      />
+
+      <div className="container mx-auto max-w-5xl relative">
+        <SectionLabel num="02" label="Tentang Saya" />
+
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          {/* Left: text */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6 text-slate-300 text-lg leading-relaxed"
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p>
-              Halo! Saya seorang <strong>Web Developer</strong> yang berdomisili di <strong>Surabaya, Jawa Timur</strong>. Saya memiliki ketertarikan mendalam dalam membangun solusi web yang andal dan terstruktur.
-            </p>
-            <p>
-              Fokus utama saya adalah pengembangan web di ekosistem <strong>Laravel</strong> dan database <strong>MySQL</strong>. Saya sering menangani pembuatan sistem informasi terintegrasi, portal perizinan, website apartemen, hingga modul-modul kepengurusan.
-            </p>
-            <p>
-              Untuk teknologi frontend modern seperti <strong>React</strong> dan <strong>Next.js</strong>, saya memanfaatkannya khusus untuk kebutuhan pembuatan landing page interaktif yang cepat, estetis, dan responsif.
-            </p>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-8 leading-[1.05]">
+              Ahmad<br />
+              <span
+                className="bg-clip-text text-transparent"
+                style={{ backgroundImage: "linear-gradient(135deg, #c4b5fd, #a855f7, #7c3aed)" }}
+              >
+                Gagang Prakasa
+              </span>
+            </h2>
+
+            <div className="space-y-5 text-slate-300 text-base leading-relaxed mb-10">
+              <p>
+                Web Developer berdomisili di{" "}
+                <span className="text-white font-semibold">Surabaya, Jawa Timur</span>{" "}
+                dengan fokus utama pada ekosistem{" "}
+                <span className="text-[#c4b5fd] font-semibold">Laravel & MySQL</span>.
+              </p>
+              <p>
+                Saya menangani berbagai proyek — dari sistem informasi pemerintahan, portal perizinan bangunan, manajemen gedung negara, hingga website apartemen dan landing page modern berbasis React & Vercel.
+              </p>
+              <p>
+                Kode yang bersih, arsitektur yang scalable, dan desain yang berbicara. Itu yang selalu saya kejar di setiap proyek.
+              </p>
+            </div>
+
+            {/* Fact grid */}
+            <div className="grid grid-cols-2 gap-3">
+              {FACTS.map((f) => (
+                <div
+                  key={f.label}
+                  className="p-3 rounded-xl border border-white/[0.05]"
+                  style={{ background: "rgba(255,255,255,0.02)" }}
+                >
+                  <p className="text-[10px] font-mono text-[#7c3aed] tracking-widest uppercase mb-1">{f.label}</p>
+                  <p className="text-sm text-slate-200 font-medium truncate">{f.value}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
+          {/* Right: skills */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid grid-cols-2 gap-4"
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="space-y-5"
           >
-            {skills.map((skill, index) => (
-              <div 
-                key={index} 
-                className="glass-card p-4 rounded-xl flex flex-col items-start justify-center border border-[#7c3aed]/20 hover:border-[#7c3aed]/60 group"
+            <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-slate-500 mb-6">Tech Stack</p>
+            {SKILLS.map((skill, i) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h4 className="font-semibold text-white mb-1 group-hover:text-[#a855f7] transition-colors">{skill.name}</h4>
-                <span className="text-sm text-slate-400">{skill.level}</span>
-              </div>
+                <div className="flex items-baseline justify-between mb-2">
+                  <span className="text-sm font-bold text-slate-200">{skill.name}</span>
+                  <span className="text-[11px] font-mono text-[#7c3aed]">{skill.level}</span>
+                </div>
+                <div className="h-px w-full bg-white/[0.05] relative overflow-hidden rounded-full">
+                  <motion.div
+                    className="absolute top-0 left-0 h-full rounded-full"
+                    style={{ background: "linear-gradient(90deg, #7c3aed, #a855f7)" }}
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.pct}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.9, delay: 0.2 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                  />
+                </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
