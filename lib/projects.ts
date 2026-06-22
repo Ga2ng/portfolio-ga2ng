@@ -81,6 +81,23 @@ export const projects: Project[] = [
     linkDemo: "http://sitaru.espacialartwork.com",
   },
   {
+    id: "modul-kkn",
+    title: "Modul KKN",
+    description: "Sistem informasi pengelolaan Kuliah Kerja Nyata (KKN) mahasiswa untuk memfasilitasi administrasi pendaftaran, penyerahan logbook harian, serta proses penilaian dari Dosen Pembimbing Lapangan secara online dan terintegrasi.",
+    images: [
+      "/modul-kkn/modul-kkn_1.png",
+      "/modul-kkn/modul-kkn_2.png"
+    ],
+    features: [
+      "Pendaftaran Kelompok & Pemilihan Lokasi KKN secara Online",
+      "Sistem Pengisian Logbook / Laporan Kegiatan Harian Mahasiswa",
+      "Manajemen dan Input Nilai oleh Dosen Pembimbing Lapangan (DPL)",
+      "Penyimpanan Dokumen Laporan Akhir & Verifikasi Administratif"
+    ],
+    tags: ["Tailwind CSS", "Vercel"],
+    linkDemo: "https://kkn-modul-web.vercel.app/",
+  },
+  {
     id: "tygo",
     title: "$TYGO",
     description: "Website landing page art untuk memecoin $TYGO — Wild Degen of Solana. Karakter harimau liar degen ini menjembatani memes, animasi, dan budaya Solana.",

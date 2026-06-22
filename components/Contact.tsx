@@ -54,19 +54,19 @@ export default function Contact() {
                 <div className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-[#a855f7]">
                   <Mail size={20} />
                 </div>
-                <span>hello@gagang.dev</span>
+                <a href="mailto:gagangprakasa@gmail.com" className="hover:text-[#a855f7] transition-colors">gagangprakasa@gmail.com</a>
               </div>
               <div className="flex items-center gap-4 text-slate-300">
                 <div className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-[#a855f7]">
                   <MapPin size={20} />
                 </div>
-                <span>Jakarta, Indonesia</span>
+                <span>Surabaya, Jawa Timur, Indonesia</span>
               </div>
               <div className="flex items-center gap-4 text-slate-300">
                 <div className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-[#a855f7]">
                   <Phone size={20} />
                 </div>
-                <span>+62 812 3456 7890</span>
+                <a href="tel:081390382131" className="hover:text-[#a855f7] transition-colors">+62 813-9038-2131</a>
               </div>
             </div>
           </motion.div>
@@ -77,8 +77,34 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="md:col-span-3 glass-card p-8 rounded-2xl"
+            className="md:col-span-3 glass-card p-8 rounded-2xl relative overflow-hidden"
           >
+            {/* Disabled Overlay */}
+            <div className="absolute inset-0 bg-[#0f0a1f]/85 backdrop-blur-sm z-10 flex flex-col items-center justify-center p-6 text-center">
+              <div className="w-14 h-14 rounded-full bg-[#7c3aed]/10 border border-[#7c3aed]/30 flex items-center justify-center text-[#a855f7] mb-4">
+                <Mail size={28} />
+              </div>
+              <h4 className="text-lg font-bold text-white mb-2">Formulir Kontak Dinonaktifkan</h4>
+              <p className="text-slate-400 text-sm max-w-sm mb-6">
+                Formulir kirim pesan belum aktif. Silakan hubungi saya secara langsung melalui Email atau WhatsApp.
+              </p>
+              <div className="flex flex-wrap gap-3 justify-center">
+                <a
+                  href="mailto:gagangprakasa@gmail.com"
+                  className="px-5 py-2.5 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] rounded-full text-white font-medium text-xs shadow-[0_0_15px_rgba(124,58,237,0.4)] hover:scale-105 transition-all"
+                >
+                  Kirim Email
+                </a>
+                <a
+                  href="https://wa.me/6281390382131"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 bg-green-600 rounded-full text-white font-medium text-xs shadow-[0_0_15px_rgba(22,163,74,0.4)] hover:scale-105 transition-all"
+                >
+                  Hubungi via WhatsApp
+                </a>
+              </div>
+            </div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-2 gap-6">
                 <div className="col-span-2 sm:col-span-1 space-y-2">

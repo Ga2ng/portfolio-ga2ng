@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 export default function About() {
   const skills = [
-    { name: "React / Next.js", level: "Expert" },
-    { name: "TypeScript", level: "Advanced" },
-    { name: "Node.js / Express", level: "Advanced" },
-    { name: "Tailwind CSS", level: "Expert" },
-    { name: "PostgreSQL / MongoDB", level: "Intermediate" },
-    { name: "Docker", level: "Intermediate" },
+    { name: "Laravel", level: "Utama / Expert" },
+    { name: "MySQL", level: "Utama / Expert" },
+    { name: "PHP", level: "Expert" },
+    { name: "React / Next.js", level: "Menengah (Landing Page)" },
+    { name: "Tailwind CSS", level: "Lanjutan / Advanced" },
+    { name: "Bootstrap", level: "Lanjutan / Advanced" },
   ];
 
   return (
@@ -35,13 +35,13 @@ export default function About() {
             className="space-y-6 text-slate-300 text-lg leading-relaxed"
           >
             <p>
-              Halo! Saya seorang <strong>Web Developer</strong> yang bersemangat menciptakan produk digital yang tidak hanya fungsional, tetapi juga memberikan pengalaman visual yang memukau.
+              Halo! Saya seorang <strong>Web Developer</strong> yang berdomisili di <strong>Surabaya, Jawa Timur</strong>. Saya memiliki ketertarikan mendalam dalam membangun solusi web yang andal dan terstruktur.
             </p>
             <p>
-              Saya berpengalaman dalam membangun berbagai solusi digital mulai dari website apps, landing page, CMS, hingga sistem ERP web. Saya berkomitmen untuk mengubah ide kompleks menjadi antarmuka yang bersih, intuitif, dan responsif.
+              Fokus utama saya adalah pengembangan web di ekosistem <strong>Laravel</strong> dan database <strong>MySQL</strong>. Saya sering menangani pembuatan sistem informasi terintegrasi, portal perizinan, website apartemen, hingga modul-modul kepengurusan.
             </p>
             <p>
-              Saat tidak sedang <em>ngoding</em>, Anda akan menemukan saya sedang membaca tentang tren desain UI/UX terbaru, atau bereksperimen dengan teknologi web 3D.
+              Untuk teknologi frontend modern seperti <strong>React</strong> dan <strong>Next.js</strong>, saya memanfaatkannya khusus untuk kebutuhan pembuatan landing page interaktif yang cepat, estetis, dan responsif.
             </p>
           </motion.div>
 

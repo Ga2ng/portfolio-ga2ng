@@ -51,9 +51,9 @@ export default function Hero() {
           </a>
           <div className="flex gap-4 sm:ml-4">
             {[
-              { icon: <Code2 size={24} />, href: "https://github.com/gagang" },
-              { icon: <Briefcase size={24} />, href: "https://linkedin.com/in/gagang" },
-              { icon: <Mail size={24} />, href: "mailto:hello@example.com" }
+              { icon: <Code2 size={24} />, href: "https://github.com/Ga2ng" },
+              { icon: <Briefcase size={24} />, href: "https://www.linkedin.com/in/ahmad-gagang-prakasa-a32948285" },
+              { icon: <Mail size={24} />, href: "mailto:gagangprakasa@gmail.com" }
             ].map((social, index) => (
               <a
                 key={index}

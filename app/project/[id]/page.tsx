@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, Code2, CheckCircle2, X } from "lucide-react";
+import { ArrowLeft, ExternalLink, CheckCircle2, X } from "lucide-react";
 import { projects } from "@/lib/projects";
 
 const getGridClass = (index: number, total: number) => {
@@ -170,13 +170,16 @@ export default function ProjectDetail() {
                 </div>
               </div>
 
-              <a href="#" className="w-full py-4 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] rounded-xl text-white font-semibold shadow-[0_0_15px_rgba(124,58,237,0.3)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all flex justify-center items-center gap-2">
-                Lihat Demo <ExternalLink size={20} />
-              </a>
-              
-              <a href="#" className="w-full py-4 glass text-white font-semibold border border-[#7c3aed]/30 hover:border-[#7c3aed] transition-all flex justify-center items-center gap-2 rounded-xl">
-                Source Code <Code2 size={20} />
-              </a>
+              {project.linkDemo && (
+                <a 
+                  href={project.linkDemo} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-full py-4 bg-gradient-to-r from-[#7c3aed] to-[#a855f7] rounded-xl text-white font-semibold shadow-[0_0_15px_rgba(124,58,237,0.3)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all flex justify-center items-center gap-2"
+                >
+                  Lihat Demo <ExternalLink size={20} />
+                </a>
+              )}
             </div>
           </div>
         </motion.div>
