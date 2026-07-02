@@ -133,5 +133,24 @@ export const projects: Project[] = [
     ],
     tags: ["Next.js", "Tailwind CSS", "React", "Solana", "Vercel CDN"],
     linkDemo: "https://yetidegen.vercel.app",
+  },
+  {
+    id: "web-lms",
+    title: "Learning Management System (LMS)",
+    description: "Desain antarmuka pengguna (UI/UX) untuk sistem Learning Management System (LMS). Proyek ini berfokus pada pengalaman belajar yang intuitif dan mudah digunakan bagi pengajar maupun siswa, didesain sepenuhnya menggunakan Figma.",
+    images: [
+      "/web_lms/lms_1.jpeg",
+      "/web_lms/lms_2.jpeg",
+      "/web_lms/lms_3.jpeg",
+      "/web_lms/lms_4.jpeg",
+      "/web_lms/lms_5.jpeg"
+    ],
+    features: [
+      "Desain antarmuka pengajar dan siswa yang intuitif",
+      "Dashboard interaktif untuk pelacakan kemajuan belajar",
+      "Sistem manajemen kursus dan materi pembelajaran",
+      "Prototyping dan Wireframing menggunakan Figma"
+    ],
+    tags: ["Figma", "UI/UX Design", "Web Design"]
   }
 ];
