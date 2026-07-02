@@ -7,6 +7,9 @@ export interface Project {
   features?: string[];
   linkDemo?: string;
   linkGithub?: string;
+  role?: string;
+  year?: string;
+  client?: string;
 }
 
 export const projects: Project[] = [
@@ -27,6 +30,8 @@ export const projects: Project[] = [
     ],
     tags: ["Laravel", "PHP", "Bootstrap / Tailwind CSS", "MySQL"],
     linkDemo: "https://balehinggil.hotelify.id/",
+    role: "Web Developer",
+    year: "2026",
   },
   {
     id: "segara",
@@ -151,6 +156,8 @@ export const projects: Project[] = [
       "Sistem manajemen kursus dan materi pembelajaran",
       "Prototyping dan Wireframing menggunakan Figma"
     ],
-    tags: ["Figma", "UI/UX Design", "Web Design"]
+    tags: ["Figma", "UI/UX Design", "Web Design"],
+    role: "UI/UX Designer",
+    year: "2026"
   }
 ];

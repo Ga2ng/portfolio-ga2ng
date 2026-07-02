@@ -233,9 +233,9 @@ export default function ProjectDetail() {
                 <h3 className="text-xs font-mono text-[#7c3aed] tracking-widest uppercase">Informasi</h3>
                 <div className="space-y-3 text-sm">
                   {[
-                    { label: "Peran", value: "Web Developer" },
-                    { label: "Tahun", value: "2024–2025" },
-                    { label: "Klien", value: "Klien / Perusahaan" },
+                    { label: "Peran", value: project.role || "Web Developer" },
+                    { label: "Tahun", value: project.year || "2024–2025" },
+                    { label: "Klien", value: project.client || "Klien / Perusahaan" },
                   ].map((row) => (
                     <div key={row.label} className="flex justify-between items-baseline">
                       <span className="text-slate-500 text-[11px] font-mono tracking-wider uppercase">{row.label}</span>
