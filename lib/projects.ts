@@ -32,6 +32,7 @@ export const projects: Project[] = [
     linkDemo: "https://balehinggil.hotelify.id/",
     role: "Web Developer",
     year: "2026",
+    client: "Apartemen Balehinggil",
   },
   {
     id: "segara",
@@ -49,6 +50,9 @@ export const projects: Project[] = [
     ],
     tags: ["Laravel / CodeIgniter", "PHP", "Bootstrap", "MySQL"],
     linkDemo: "http://156.67.221.118/gedung_negara/public/",
+    role: "Web Developer",
+    year: "2025",
+    client: "Pemerintah Daerah",
   },
   {
     id: "simpbg",
@@ -66,6 +70,9 @@ export const projects: Project[] = [
     ],
     tags: ["CodeIgniter / Laravel", "PHP", "MySQL", "Web API"],
     linkDemo: "https://simpbg.espacialartwork.co.id/home",
+    role: "Web Developer",
+    year: "2025",
+    client: "Pemerintah Daerah",
   },
   {
     id: "sitaru",
@@ -84,6 +91,9 @@ export const projects: Project[] = [
     ],
     tags: ["Laravel", "PHP", "Leaflet/Mapbox", "MySQL"],
     linkDemo: "http://sitaru.espacialartwork.com",
+    role: "Web Developer",
+    year: "2024",
+    client: "Pemerintah Daerah",
   },
   {
     id: "modul-kkn",
@@ -101,6 +111,9 @@ export const projects: Project[] = [
     ],
     tags: ["Tailwind CSS", "Vercel"],
     linkDemo: "https://kkn-modul-web.vercel.app/",
+    role: "Frontend Developer",
+    year: "2024",
+    client: "Akademik / Universitas",
   },
   {
     id: "tygo",
@@ -120,6 +133,9 @@ export const projects: Project[] = [
     ],
     tags: ["Next.js", "Tailwind CSS", "React", "Solana", "Vercel CDN"],
     linkDemo: "https://tygo.vercel.app",
+    role: "Frontend Developer",
+    year: "2025",
+    client: "$TYGO Community",
   },
   {
     id: "yeti",
@@ -138,6 +154,9 @@ export const projects: Project[] = [
     ],
     tags: ["Next.js", "Tailwind CSS", "React", "Solana", "Vercel CDN"],
     linkDemo: "https://yetidegen.vercel.app",
+    role: "Frontend Developer",
+    year: "2025",
+    client: "$YETI Community",
   },
   {
     id: "web-lms",
@@ -158,6 +177,7 @@ export const projects: Project[] = [
     ],
     tags: ["Figma", "UI/UX Design", "Web Design"],
     role: "UI/UX Designer",
-    year: "2026"
+    year: "2026",
+    client: "Personal Project"
   }
 ];
