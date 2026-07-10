@@ -32,7 +32,7 @@ export const projects: Project[] = [
     linkDemo: "https://balehinggil.hotelify.id/",
     role: "Web Developer",
     year: "2026",
-    client: "Apartemen Balehinggil",
+    client: "ApartemenBalehinggil",
   },
   {
     id: "segara",
