@@ -4,16 +4,17 @@ import { motion } from "framer-motion";
 
 const SKILLS = [
   { name: "Laravel", level: "Expert", pct: 95 },
-  { name: "MySQL", level: "Expert", pct: 92 },
+  { name: "MySQL / Database", level: "Expert", pct: 92 },
   { name: "PHP", level: "Expert", pct: 90 },
+  { name: "ETL & Data Import (Excel/CSV)", level: "Advanced", pct: 88 },
+  { name: "CMS & Inventory Systems", level: "Advanced", pct: 87 },
+  { name: "Tailwind CSS & Bootstrap", level: "Advanced", pct: 85 },
   { name: "React / Next.js", level: "Intermediate", pct: 68 },
-  { name: "Tailwind CSS", level: "Advanced", pct: 85 },
-  { name: "Bootstrap", level: "Advanced", pct: 83 },
 ];
 
 const FACTS = [
   { label: "Domisili", value: "Surabaya, JTM" },
-  { label: "Spesialisasi", value: "Laravel · MySQL" },
+  { label: "Spesialisasi", value: "Laravel · MySQL · ETL" },
   { label: "Status", value: "Open to Work" },
   { label: "Email", value: "gagangprakasa@gmail.com" },
 ];
@@ -75,10 +76,10 @@ export default function About() {
                 <span className="text-[#c4b5fd] font-semibold">Laravel & MySQL</span>.
               </p>
               <p>
-                Saya berpengalaman membangun berbagai aplikasi web skala enterprise — mulai dari <span className="text-white font-medium">booking engine</span>, portal perizinan digital, sistem manajemen aset &amp; gedung, hingga website interaktif modern berbasis React &amp; Next.js.
+                Saya berpengalaman membangun berbagai aplikasi bisnis — mulai dari <span className="text-white font-medium">booking engine</span>, kustom <span className="text-[#c4b5fd] font-medium">CMS</span>, <span className="text-white font-medium">inventory tools</span>, hingga otomatisasi <span className="text-[#c4b5fd] font-medium">ETL data pipeline</span> yang secara otomatis memproses dan meng-inject data dari berkas Excel/CSV ke database MySQL.
               </p>
               <p>
-                Fokus utama saya pada <span className="text-[#c4b5fd] font-medium">arsitektur kode yang bersih (clean code)</span>, optimasi performa query MySQL, serta pengembangan RESTful API yang aman dan scalable.
+                Fokus utama saya pada <span className="text-white font-medium">clean code architecture</span>, optimasi performa query database, serta integrasi RESTful API yang aman dan scalable.
               </p>
             </div>
 
