@@ -92,7 +92,7 @@ export const projects: Project[] = [
       "Pengajuan & Pelaporan Tata Ruang Administratif"
     ],
     tags: ["Laravel", "PHP", "Leaflet/Mapbox", "MySQL"],
-    linkDemo: "http://banyuwangikab.go.id",
+    linkDemo: "https://sitaru.banyuwangikab.go.id/",
     role: "Web Developer",
     year: "2024",
     client: "Pemerintah Daerah",
