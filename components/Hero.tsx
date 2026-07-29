@@ -122,9 +122,8 @@ function Marquee() {
         {items.map((item, i) => (
           <span
             key={i}
-            className={`text-[11px] font-bold tracking-[0.3em] ${
-              item === "·" ? "text-[#7c3aed]" : "text-slate-500"
-            }`}
+            className={`text-[11px] font-bold tracking-[0.3em] ${item === "·" ? "text-[#7c3aed]" : "text-slate-500"
+              }`}
           >
             {item}
           </span>

@@ -75,10 +75,10 @@ export default function About() {
                 <span className="text-[#c4b5fd] font-semibold">Laravel & MySQL</span>.
               </p>
               <p>
-                Saya menangani berbagai proyek — dari sistem informasi pemerintahan, portal perizinan bangunan, manajemen gedung negara, hingga website apartemen dan landing page modern berbasis React & Vercel.
+                Saya berpengalaman membangun berbagai aplikasi web skala enterprise — mulai dari <span className="text-white font-medium">booking engine</span>, portal perizinan digital, sistem manajemen aset &amp; gedung, hingga website interaktif modern berbasis React &amp; Next.js.
               </p>
               <p>
-                Kode yang bersih, arsitektur yang scalable, dan desain yang berbicara. Itu yang selalu saya kejar di setiap proyek.
+                Fokus utama saya pada <span className="text-[#c4b5fd] font-medium">arsitektur kode yang bersih (clean code)</span>, optimasi performa query MySQL, serta pengembangan RESTful API yang aman dan scalable.
               </p>
             </div>
 

@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "Ahmad Gagang Prakasa — Web Developer Surabaya",
   description:
     "Portfolio Ahmad Gagang Prakasa, Web Developer berbasis di Surabaya, Jawa Timur. Spesialis Laravel, PHP, MySQL. Membangun sistem informasi pemerintahan, portal perizinan, manajemen apartemen, dan landing page modern.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   keywords: [
     "Ahmad Gagang Prakasa",
     "Gagang Prakasa",
