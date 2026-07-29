@@ -14,7 +14,7 @@ const SKILLS = [
 
 const FACTS = [
   { label: "Domisili", value: "Surabaya, JTM" },
-  { label: "Spesialisasi", value: "Laravel · Python · MySQL" },
+  { label: "Spesialisasi", value: "Laravel · MySQL" },
   { label: "Workflow", value: "AI Agent & Automation" },
   { label: "Status", value: "Open to Work" },
 ];
@@ -29,8 +29,8 @@ const CATEGORIZED_TOOLS = [
         color: "#3776AB",
         icon: (
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <path d="M11.9 2c-4.3 0-4 .5-4 2.1v2.2h8.1v.8H5.7C4.1 7.1 2 8.3 2 11.9c0 3.8 1.4 4.8 4.2 4.8h1.6v-2.3c0-2.6 2.2-4.7 4.8-4.7h5.1c1.9 0 2.2-1.3 2.2-2.5V4.2C20.1 2.5 18 2 11.9 2zm-2.4 2.2c.6 0 1.1.5 1.1 1.1s-.5 1.1-1.1 1.1-1.1-.5-1.1-1.1.5-1.1 1.1-1.1z" fill="#3776AB"/>
-            <path d="M12.1 22c4.3 0 4-.5 4-2.1v-2.2H12v-.8h10.3c1.6 0 3.7-1.2 3.7-4.8 0-3.8-1.4-4.8-4.2-4.8h-1.6v2.3c0 2.6-2.2 4.7-4.8 4.7H10.3c-1.9 0-2.2 1.3-2.2 2.5v3.1c0 1.7 2.1 2.2 8.2 2.2zm2.4-2.2c-.6 0-1.1-.5-1.1-1.1s.5-1.1 1.1-1.1 1.1.5 1.1 1.1-.5 1.1-1.1 1.1z" fill="#FFD43B"/>
+            <path d="M11.9 2c-4.3 0-4 .5-4 2.1v2.2h8.1v.8H5.7C4.1 7.1 2 8.3 2 11.9c0 3.8 1.4 4.8 4.2 4.8h1.6v-2.3c0-2.6 2.2-4.7 4.8-4.7h5.1c1.9 0 2.2-1.3 2.2-2.5V4.2C20.1 2.5 18 2 11.9 2zm-2.4 2.2c.6 0 1.1.5 1.1 1.1s-.5 1.1-1.1 1.1-1.1-.5-1.1-1.1.5-1.1 1.1-1.1z" fill="#3776AB" />
+            <path d="M12.1 22c4.3 0 4-.5 4-2.1v-2.2H12v-.8h10.3c1.6 0 3.7-1.2 3.7-4.8 0-3.8-1.4-4.8-4.2-4.8h-1.6v2.3c0 2.6-2.2 4.7-4.8 4.7H10.3c-1.9 0-2.2 1.3-2.2 2.5v3.1c0 1.7 2.1 2.2 8.2 2.2zm2.4-2.2c-.6 0-1.1-.5-1.1-1.1s.5-1.1 1.1-1.1 1.1.5 1.1 1.1-.5 1.1-1.1 1.1z" fill="#FFD43B" />
           </svg>
         ),
       },
@@ -40,7 +40,7 @@ const CATEGORIZED_TOOLS = [
         color: "#FF2D20",
         icon: (
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#FF2D20" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#FF2D20" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         ),
       },
@@ -61,7 +61,7 @@ const CATEGORIZED_TOOLS = [
         color: "#5FA04E",
         icon: (
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#5FA04E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2L2 7.5V16.5L12 22L22 16.5V7.5L12 2Z"/>
+            <path d="M12 2L2 7.5V16.5L12 22L22 16.5V7.5L12 2Z" />
           </svg>
         ),
       },
@@ -86,8 +86,8 @@ const CATEGORIZED_TOOLS = [
         color: "#4479A1",
         icon: (
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <path d="M4 6c0-1.657 3.582-3 8-3s8 1.343 8 3v12c0 1.657-3.582 3-8 3s-8-1.343-8-3V6z" stroke="#38BDF8" strokeWidth="2"/>
-            <path d="M4 12c0 1.657 3.582 3 8 3s8-1.343 8-3" stroke="#38BDF8" strokeWidth="2"/>
+            <path d="M4 6c0-1.657 3.582-3 8-3s8 1.343 8 3v12c0 1.657-3.582 3-8 3s-8-1.343-8-3V6z" stroke="#38BDF8" strokeWidth="2" />
+            <path d="M4 12c0 1.657 3.582 3 8 3s8-1.343 8-3" stroke="#38BDF8" strokeWidth="2" />
           </svg>
         ),
       },
@@ -139,7 +139,7 @@ const CATEGORIZED_TOOLS = [
         icon: (
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#F1F5F9" strokeWidth="2">
             <circle cx="12" cy="12" r="9" />
-            <path d="M10 8v8l6-8" strokeLinecap="round"/>
+            <path d="M10 8v8l6-8" strokeLinecap="round" />
           </svg>
         ),
       },
@@ -149,7 +149,7 @@ const CATEGORIZED_TOOLS = [
         color: "#3178C6",
         icon: (
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="4" fill="#3178C6"/>
+            <rect width="24" height="24" rx="4" fill="#3178C6" />
             <text x="5" y="17" fontSize="11" fontWeight="bold" fill="#FFFFFF">TS</text>
           </svg>
         ),
@@ -160,7 +160,7 @@ const CATEGORIZED_TOOLS = [
         color: "#06B6D4",
         icon: (
           <svg className="w-5 h-5" fill="#06B6D4" viewBox="0 0 24 24">
-            <path d="M12 6c-3.314 0-5.8 2.05-6.6 4.95 1.1-.9 2.2-1.35 3.3-1.35 1.925 0 3.25 1.325 4 2.7 1.2 2.2 2.925 3.7 5.3 3.7 3.314 0 5.8-2.05 6.6-4.95-1.1.9-2.2 1.35-3.3 1.35-1.925 0-3.25-1.325-4-2.7C16.1 7.5 14.375 6 12 6zM5.4 12c-3.314 0-5.8 2.05-6.6 4.95 1.1-.9 2.2-1.35 3.3-1.35 1.925 0 3.25 1.325 4 2.7 1.2 2.2 2.925 3.7 5.3 3.7 3.314 0 5.8-2.05 6.6-4.95-1.1.9-2.2 1.35-3.3 1.35-1.925 0-3.25-1.325-4-2.7C9.5 13.5 7.775 12 5.4 12z"/>
+            <path d="M12 6c-3.314 0-5.8 2.05-6.6 4.95 1.1-.9 2.2-1.35 3.3-1.35 1.925 0 3.25 1.325 4 2.7 1.2 2.2 2.925 3.7 5.3 3.7 3.314 0 5.8-2.05 6.6-4.95-1.1.9-2.2 1.35-3.3 1.35-1.925 0-3.25-1.325-4-2.7C16.1 7.5 14.375 6 12 6zM5.4 12c-3.314 0-5.8 2.05-6.6 4.95 1.1-.9 2.2-1.35 3.3-1.35 1.925 0 3.25 1.325 4 2.7 1.2 2.2 2.925 3.7 5.3 3.7 3.314 0 5.8-2.05 6.6-4.95-1.1.9-2.2 1.35-3.3 1.35-1.925 0-3.25-1.325-4-2.7C9.5 13.5 7.775 12 5.4 12z" />
           </svg>
         ),
       },
@@ -170,11 +170,11 @@ const CATEGORIZED_TOOLS = [
         color: "#F24E1E",
         icon: (
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <path fillRule="evenodd" clipRule="evenodd" d="M12 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="#F24E1E"/>
-            <path fillRule="evenodd" clipRule="evenodd" d="M18 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="#FF7262"/>
-            <path fillRule="evenodd" clipRule="evenodd" d="M18 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="#1ABCFE"/>
-            <path fillRule="evenodd" clipRule="evenodd" d="M12 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="#A259FF"/>
-            <path fillRule="evenodd" clipRule="evenodd" d="M12 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="#0ACF83"/>
+            <path fillRule="evenodd" clipRule="evenodd" d="M12 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="#F24E1E" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M18 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="#FF7262" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M18 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="#1ABCFE" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M12 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="#A259FF" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M12 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="#0ACF83" />
           </svg>
         ),
       },
@@ -189,7 +189,7 @@ const CATEGORIZED_TOOLS = [
         color: "#38BDF8",
         icon: (
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polygon points="3 3 10.07 19.97 12.58 12.58 19.97 10.07 3 3" fill="rgba(56,189,248,0.2)"/>
+            <polygon points="3 3 10.07 19.97 12.58 12.58 19.97 10.07 3 3" fill="rgba(56,189,248,0.2)" />
             <line x1="13" y1="13" x2="19" y2="19" />
           </svg>
         ),
@@ -299,7 +299,7 @@ const CATEGORIZED_TOOLS = [
         icon: (
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#FCC624" strokeWidth="2">
             <rect x="4" y="4" width="16" height="16" rx="3" />
-            <path d="M8 10l3 3-3 3M13 16h3" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M8 10l3 3-3 3M13 16h3" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         ),
       },
