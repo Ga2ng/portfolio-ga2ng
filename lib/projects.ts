@@ -10,6 +10,7 @@ export interface Project {
   role?: string;
   year?: string;
   client?: string;
+  featured?: string; // e.g. "Flagship", "AI-Powered", "Featured"
 }
 
 export const projects: Project[] = [
@@ -33,6 +34,7 @@ export const projects: Project[] = [
     role: "Web Developer",
     year: "2026",
     client: "ApartemenBalehinggil",
+    featured: "Flagship",
   },
   {
     id: "segara",
@@ -90,10 +92,11 @@ export const projects: Project[] = [
       "Pengajuan & Pelaporan Tata Ruang Administratif"
     ],
     tags: ["Laravel", "PHP", "Leaflet/Mapbox", "MySQL"],
-    linkDemo: "http://sitaru.espacialartwork.com",
+    linkDemo: "http://banyuwangikab.go.id",
     role: "Web Developer",
     year: "2024",
     client: "Pemerintah Daerah",
+    featured: "WebGIS",
   },
   {
     id: "modul-kkn",

@@ -79,6 +79,13 @@ export default function Portfolio() {
                 <span className="absolute top-3 right-3 text-[10px] font-mono text-white/30">
                   {String(index + 1).padStart(2, "0")}
                 </span>
+
+                {/* Featured badge */}
+                {project.featured && (
+                  <span className="absolute top-3 left-3 text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full text-white" style={{ background: "linear-gradient(135deg, #7c3aed, #a855f7)" }}>
+                    ★ {project.featured}
+                  </span>
+                )}
               </div>
 
               {/* Content */}

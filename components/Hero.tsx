@@ -117,7 +117,7 @@ function Marquee() {
       <motion.div
         className="flex gap-8 whitespace-nowrap"
         animate={{ x: ["0%", "-50%"] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
       >
         {items.map((item, i) => (
           <span
@@ -285,8 +285,9 @@ export default function Hero() {
           {/* Description */}
           <p className="text-slate-300 text-base leading-relaxed max-w-sm">
             Spesialis{" "}
-            <span className="text-[#c4b5fd] font-semibold">Laravel & MySQL</span>.
-            Membangun sistem terintegrasi, portal perizinan, hingga landing page — semuanya dengan standar kode yang bersih dan desain yang berbicara.
+            <span className="text-[#c4b5fd] font-semibold">Laravel, Python & MySQL</span>.
+            Membangun booking engine, ETL pipeline, REST API — dengan standar clean code dan kecepatan{" "}
+            <span className="text-[#c4b5fd] font-medium">AI-assisted workflow</span>.
           </p>
 
           {/* CTA + socials */}
