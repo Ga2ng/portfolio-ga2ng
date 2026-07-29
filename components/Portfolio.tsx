@@ -114,6 +114,44 @@ export default function Portfolio() {
             </motion.div>
           ))}
         </div>
+
+        {/* GitHub Repositories Banner CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-14 p-8 rounded-2xl border border-[#7c3aed]/20 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6"
+          style={{ background: "linear-gradient(135deg, rgba(124,58,237,0.06) 0%, rgba(168,85,247,0.02) 100%)" }}
+        >
+          {/* Subtle glow orb */}
+          <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-[#7c3aed]/10 blur-2xl pointer-events-none" />
+
+          <div>
+            <span className="text-[10px] font-mono text-[#7c3aed] tracking-widest uppercase mb-1 block">
+              Eksplorasi Kode &amp; Repositori Open-Source
+            </span>
+            <h3 className="text-xl font-black text-white mb-2 tracking-tight">
+              Ingin melihat lebih banyak proyek &amp; eksperimen kode?
+            </h3>
+            <p className="text-slate-400 text-sm max-w-xl leading-relaxed">
+              Selain karya terpilih di atas, saya juga mempublikasikan berbagai repositori utility tools, kustom modul, dan eksperimen source code langsung di profil GitHub <span className="text-[#c4b5fd] font-semibold">@Ga2ng</span>.
+            </p>
+          </div>
+
+          <a
+            href="https://github.com/Ga2ng"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-bold text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_0_28px_rgba(124,58,237,0.4)]"
+            style={{
+              background: "linear-gradient(135deg, #7c3aed, #a855f7)",
+            }}
+          >
+            Jelajahi GitHub @Ga2ng
+            <ExternalLink size={15} />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
