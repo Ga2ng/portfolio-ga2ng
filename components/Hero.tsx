@@ -208,7 +208,7 @@ export default function Hero() {
       <div className="absolute top-1/3 right-1/4 w-[380px] h-[380px] bg-[#7c3aed]/[0.05] rounded-full blur-[90px] pointer-events-none -z-10" />
 
       {/* ── Content ── */}
-      <div className="container mx-auto max-w-5xl w-full pt-28 pb-20">
+      <div className="container mx-auto max-w-6xl w-full pt-28 pb-20">
 
         {/* Overline label */}
         <motion.div

@@ -42,8 +42,21 @@ export default function About() {
         }}
       />
 
-      <div className="container mx-auto max-w-5xl relative">
-        <SectionLabel num="02" label="Tentang Saya" />
+      <div className="container mx-auto max-w-6xl relative">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <div>
+            <SectionLabel num="02" label="Tentang Saya" />
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-[1.05]">
+              Ahmad<br />
+              <span
+                className="bg-clip-text text-transparent"
+                style={{ backgroundImage: "linear-gradient(135deg, #c4b5fd, #a855f7, #7c3aed)" }}
+              >
+                Gagang Prakasa
+              </span>
+            </h2>
+          </div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Left: text */}
@@ -53,15 +66,6 @@ export default function About() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-8 leading-[1.05]">
-              Ahmad<br />
-              <span
-                className="bg-clip-text text-transparent"
-                style={{ backgroundImage: "linear-gradient(135deg, #c4b5fd, #a855f7, #7c3aed)" }}
-              >
-                Gagang Prakasa
-              </span>
-            </h2>
 
             <div className="space-y-5 text-slate-300 text-base leading-relaxed mb-10">
               <p>

@@ -48,27 +48,28 @@ export default function Contact() {
         }}
       />
 
-      <div className="container mx-auto max-w-5xl relative">
-        <SectionLabel num="04" label="Let's Connect" />
-
+      <div className="container mx-auto max-w-6xl relative">
         {/* Big CTA heading */}
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-20"
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16"
         >
-          <h2 className="text-5xl md:text-7xl font-black tracking-tight leading-[0.95] mb-6">
-            Ada proyek<br />
-            <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: "linear-gradient(135deg, #c4b5fd, #a855f7, #7c3aed)" }}
-            >
-              di pikiran?
-            </span>
-          </h2>
-          <p className="text-slate-300 text-base max-w-md leading-relaxed">
+          <div>
+            <SectionLabel num="04" label="Let's Connect" />
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-[1.05]">
+              Ada proyek<br />
+              <span
+                className="bg-clip-text text-transparent"
+                style={{ backgroundImage: "linear-gradient(135deg, #c4b5fd, #a855f7, #7c3aed)" }}
+              >
+                di pikiran?
+              </span>
+            </h2>
+          </div>
+          <p className="text-slate-300 text-sm max-w-sm leading-relaxed">
             Saya terbuka untuk kolaborasi, freelance, dan diskusi proyek. Jangan ragu — langsung hubungi saja.
           </p>
         </motion.div>

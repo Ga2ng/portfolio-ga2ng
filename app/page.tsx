@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
+// import GitHubContributions from "@/components/GitHubContributions";
 import Contact from "@/components/Contact";
 import { Code2 } from "lucide-react";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <About />
       <Portfolio />
+      {/* <GitHubContributions /> */}
       <Contact />
       
       <footer className="py-8 border-t border-[#7c3aed]/20 text-center flex flex-col items-center gap-3">
