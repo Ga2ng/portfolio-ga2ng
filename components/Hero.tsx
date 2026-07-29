@@ -100,13 +100,13 @@ const MARQUEE_ITEMS = [
   "·",
   "LARAVEL",
   "·",
+  "AI AGENT POWERED",
+  "·",
   "FULL STACK",
   "·",
   "UI ENTHUSIAST",
   "·",
   "SURABAYA",
-  "·",
-  "COOL BY DEFAULT",
   "·",
 ];
 

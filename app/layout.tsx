@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     "GA2NG",
     "Web Developer Surabaya",
     "Laravel Developer Surabaya",
+    "AI Agent Tools Developer",
+    "AI-Assisted Web Developer",
     "PHP Developer",
     "MySQL Developer",
     "Full Stack Developer Surabaya",
