@@ -285,7 +285,7 @@ export default function Hero() {
           {/* Description */}
           <p className="text-slate-300 text-base leading-relaxed max-w-sm">
             Spesialis{" "}
-            <span className="text-[#c4b5fd] font-semibold">Laravel, Python & MySQL</span>.
+            <span className="text-[#c4b5fd] font-semibold">Laravel & MySQL</span>.
             Membangun booking engine, ETL pipeline, REST API — dengan standar clean code dan kecepatan{" "}
             <span className="text-[#c4b5fd] font-medium">AI-assisted workflow</span>.
           </p>
