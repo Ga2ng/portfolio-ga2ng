@@ -67,7 +67,7 @@ export default function ProjectDetail() {
             {/* Metal spiral rings linking leftwards */}
             <div 
               className="absolute right-full top-1/2 -translate-y-1/2 w-7 h-2.5 bg-gradient-to-r from-slate-300 via-slate-100 to-slate-400 border-2 border-[#0f0e14] rounded-full" 
-              style={{ transform: "rotate(-12deg)", originX: 1 }} 
+              style={{ transform: "rotate(-12deg)", transformOrigin: "right" }} 
             />
           </div>
         ))}

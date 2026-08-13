@@ -103,7 +103,7 @@ function PaperWritingDoodle() {
       pathLength: 1,
       opacity: 1,
       transition: {
-        pathLength: { delay, duration: 1.2, ease: "easeInOut" },
+        pathLength: { delay, duration: 1.2, ease: "easeInOut" as const },
         opacity: { delay, duration: 0.01 }
       }
     }
@@ -116,7 +116,7 @@ function PaperWritingDoodle() {
       opacity: 1,
       scale: 1,
       transition: {
-        pathLength: { delay, duration: 1.5, ease: "easeInOut" },
+        pathLength: { delay, duration: 1.5, ease: "easeInOut" as const },
         opacity: { delay, duration: 0.01 },
         scale: { delay, duration: 0.3 }
       }
