@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Domain-level skill bars (no tool duplication)
 const SKILLS = [
   { name: "Backend Development", level: "Expert", pct: 94 },
   { name: "Database Engineering", level: "Expert", pct: 91 },
@@ -68,9 +67,9 @@ const CATEGORIZED_TOOLS = [
       {
         name: "Express.js",
         desc: "Node Web API",
-        color: "#CBD5E1",
+        color: "#333333",
         icon: (
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" strokeWidth="2" strokeLinecap="round">
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2" strokeLinecap="round">
             <path d="M4 12h16M12 4v16" />
           </svg>
         ),
@@ -86,8 +85,8 @@ const CATEGORIZED_TOOLS = [
         color: "#4479A1",
         icon: (
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <path d="M4 6c0-1.657 3.582-3 8-3s8 1.343 8 3v12c0 1.657-3.582 3-8 3s-8-1.343-8-3V6z" stroke="#38BDF8" strokeWidth="2" />
-            <path d="M4 12c0 1.657 3.582 3 8 3s8-1.343 8-3" stroke="#38BDF8" strokeWidth="2" />
+            <path d="M4 6c0-1.657 3.582-3 8-3s8 1.343 8 3v12c0 1.657-3.582 3-8 3s-8-1.343-8-3V6z" stroke="#4479A1" strokeWidth="2" />
+            <path d="M4 12c0 1.657 3.582 3 8 3s8-1.343 8-3" stroke="#4479A1" strokeWidth="2" />
           </svg>
         ),
       },
@@ -96,18 +95,18 @@ const CATEGORIZED_TOOLS = [
         desc: "Advanced Relational DB",
         color: "#336791",
         icon: (
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" strokeWidth="2">
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#336791" strokeWidth="2">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
-            <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" fill="rgba(56,189,248,0.3)" />
+            <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" fill="rgba(51,103,145,0.2)" />
           </svg>
         ),
       },
       {
         name: "SQLite",
         desc: "Embedded DB",
-        color: "#38BDF8",
+        color: "#003B57",
         icon: (
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" strokeWidth="2">
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#003B57" strokeWidth="2">
             <rect x="3" y="4" width="18" height="16" rx="2" />
             <line x1="3" y1="10" x2="21" y2="10" />
             <line x1="9" y1="10" x2="9" y2="20" />
@@ -135,9 +134,9 @@ const CATEGORIZED_TOOLS = [
       {
         name: "Next.js",
         desc: "Fullstack Framework",
-        color: "#F1F5F9",
+        color: "#000000",
         icon: (
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#F1F5F9" strokeWidth="2">
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="2">
             <circle cx="12" cy="12" r="9" />
             <path d="M10 8v8l6-8" strokeLinecap="round" />
           </svg>
@@ -150,7 +149,7 @@ const CATEGORIZED_TOOLS = [
         icon: (
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
             <rect width="24" height="24" rx="4" fill="#3178C6" />
-            <text x="5" y="17" fontSize="11" fontWeight="bold" fill="#FFFFFF">TS</text>
+            <text x="5" y="17" fontSize="11" fontWeight="bold" fill="#ffffff">TS</text>
           </svg>
         ),
       },
@@ -186,10 +185,10 @@ const CATEGORIZED_TOOLS = [
       {
         name: "Cursor AI",
         desc: "AI Code Editor",
-        color: "#38BDF8",
+        color: "#00E5FF",
         icon: (
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polygon points="3 3 10.07 19.97 12.58 12.58 19.97 10.07 3 3" fill="rgba(56,189,248,0.2)" />
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="3 3 10.07 19.97 12.58 12.58 19.97 10.07 3 3" fill="rgba(0,229,255,0.15)" />
             <line x1="13" y1="13" x2="19" y2="19" />
           </svg>
         ),
@@ -200,7 +199,7 @@ const CATEGORIZED_TOOLS = [
         color: "#A855F7",
         icon: (
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#A855F7" strokeWidth="2">
-            <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="rgba(168,85,247,0.3)" />
+            <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="rgba(168,85,247,0.2)" />
             <circle cx="12" cy="12" r="2.5" fill="#A855F7" />
           </svg>
         ),
@@ -223,7 +222,7 @@ const CATEGORIZED_TOOLS = [
         color: "#F59E0B",
         icon: (
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="rgba(245,158,11,0.2)" />
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="rgba(245,158,11,0.15)" />
           </svg>
         ),
       },
@@ -237,29 +236,6 @@ const CATEGORIZED_TOOLS = [
             <rect x="14" y="2" width="8" height="8" rx="2" />
             <rect x="14" y="14" width="8" height="8" rx="2" />
             <rect x="2" y="14" width="8" height="8" rx="2" />
-          </svg>
-        ),
-      },
-      {
-        name: "Browser Auto",
-        desc: "Web Scraping & Bots",
-        color: "#EC4899",
-        icon: (
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#EC4899" strokeWidth="2" strokeLinecap="round">
-            <circle cx="12" cy="12" r="9" />
-            <path d="M12 3a9 9 0 000 18v-9z" fill="rgba(236,72,153,0.3)" />
-          </svg>
-        ),
-      },
-      {
-        name: "ETL Pipeline",
-        desc: "Excel/CSV → DB Inject",
-        color: "#6366F1",
-        icon: (
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
         ),
       },
@@ -285,9 +261,9 @@ const CATEGORIZED_TOOLS = [
       {
         name: "GitHub",
         desc: "Repo & CI/CD",
-        color: "#F1F5F9",
+        color: "#181717",
         icon: (
-          <svg className="w-5 h-5" fill="#F1F5F9" viewBox="0 0 24 24">
+          <svg className="w-5 h-5" fill="#181717" viewBox="0 0 24 24">
             <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
           </svg>
         ),
@@ -304,22 +280,11 @@ const CATEGORIZED_TOOLS = [
         ),
       },
       {
-        name: "SSH & SFTP",
-        desc: "Secure Transfer",
-        color: "#4ADE80",
-        icon: (
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" />
-            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-          </svg>
-        ),
-      },
-      {
         name: "Vercel",
         desc: "Cloud Hosting",
-        color: "#FFFFFF",
+        color: "#000000",
         icon: (
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="#FFFFFF">
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="#000000">
             <path d="M12 2L24 22H0L12 2Z" />
           </svg>
         ),
@@ -328,7 +293,6 @@ const CATEGORIZED_TOOLS = [
   },
 ];
 
-// ── Tool Marquee Row ───────────────────────────────────────────────────────
 type ToolItem = { name: string; desc: string; color: string; icon: React.ReactNode };
 
 function ToolMarqueeRow({
@@ -340,7 +304,6 @@ function ToolMarqueeRow({
   direction?: "left" | "right";
   speed?: number;
 }) {
-  // Duplicate for seamless loop
   const doubled = [...items, ...items, ...items];
   const animX = direction === "left" ? ["0%", "-33.333%"] : ["-33.333%", "0%"];
 
@@ -354,17 +317,27 @@ function ToolMarqueeRow({
         {doubled.map((item, i) => (
           <div
             key={`${item.name}-${i}`}
-            className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl border border-white/[0.06] flex-shrink-0"
-            style={{ background: "rgba(255,255,255,0.025)" }}
+            className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl flex-shrink-0"
+            style={{
+              background: "#ffffff",
+              border: "2px solid #0f0e14",
+              boxShadow: "3px 3px 0 #0f0e14",
+            }}
           >
             <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
               {item.icon}
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="text-[11px] font-bold text-slate-200 whitespace-nowrap leading-none">
+              <span
+                className="text-[11px] font-bold whitespace-nowrap leading-none"
+                style={{ fontFamily: "var(--font-nunito)", color: "#0f0e14" }}
+              >
                 {item.name}
               </span>
-              <span className="text-[9px] font-mono text-slate-500 whitespace-nowrap leading-tight mt-0.5">
+              <span
+                className="text-[9px] whitespace-nowrap leading-tight mt-0.5"
+                style={{ fontFamily: "var(--font-space)", color: "rgba(15,14,20,0.5)" }}
+              >
                 {item.desc}
               </span>
             </div>
@@ -377,10 +350,19 @@ function ToolMarqueeRow({
 
 function SectionLabel({ num, label }: { num: string; label: string }) {
   return (
-    <div className="flex items-center gap-3 mb-10">
-      <span className="text-[11px] font-mono text-[#7c3aed]">{num}</span>
-      <span className="h-px w-8 bg-[#7c3aed]/60" />
-      <span className="text-[11px] font-bold tracking-[0.3em] text-[#a855f7] uppercase">{label}</span>
+    <div className="flex items-center gap-3 mb-12">
+      <span 
+        className="px-5 py-2.5 border-3 border-[#0f0e14] bg-[#ffffff] text-[#0f0e14] font-black rounded-xl shadow-[4px_4px_0_#0f0e14] rotate-[-2deg] inline-flex items-center gap-2.5 text-sm uppercase tracking-wider transition-transform hover:rotate-0 duration-200"
+        style={{ fontFamily: "var(--font-nunito)" }}
+      >
+        <span
+          className="text-base font-black opacity-60"
+          style={{ fontFamily: "var(--font-bangers)", letterSpacing: "0.06em" }}
+        >
+          {num}
+        </span>
+        {label}
+      </span>
     </div>
   );
 }
@@ -388,12 +370,10 @@ function SectionLabel({ num, label }: { num: string; label: string }) {
 export default function About() {
   return (
     <section id="about" className="relative py-28 px-6 overflow-hidden">
-      {/* Subtle background dot grid */}
+      {/* Subtle halftone bg */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-30"
+        className="absolute inset-0 pointer-events-none halftone-bg opacity-40"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(124,58,237,0.12) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
           maskImage: "radial-gradient(ellipse 70% 100% at 20% 50%, black, transparent)",
           WebkitMaskImage: "radial-gradient(ellipse 70% 100% at 20% 50%, black, transparent)",
         }}
@@ -401,18 +381,30 @@ export default function About() {
 
       <div className="container mx-auto max-w-6xl relative">
         {/* ── SECTION HEADER ── */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 relative">
           <div>
             <SectionLabel num="02" label="Tentang Saya" />
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-[1.05]">
+            <h2
+              className="text-4xl md:text-5xl font-black tracking-tight leading-[1.05]"
+              style={{ fontFamily: "var(--font-fredoka, 'Fredoka One', cursive)", color: "#0f0e14" }}
+            >
               Ahmad<br />
-              <span
-                className="bg-clip-text text-transparent"
-                style={{ backgroundImage: "linear-gradient(135deg, #c4b5fd, #a855f7, #7c3aed)" }}
-              >
-                Gagang Prakasa
-              </span>
+              <span style={{ color: "#0f0e14" }}>Gagang Prakasa</span>
             </h2>
+          </div>
+
+          {/* Round Stamp Sticker tempelan */}
+          <div 
+            className="absolute right-0 top-0 w-24 h-24 rounded-full border-3 border-[#0f0e14] bg-[#ffe135] shadow-[4px_4px_0_#0f0e14] flex flex-col items-center justify-center rotate-[12deg] hover:rotate-0 transition-transform duration-200 select-none z-10 hidden md:flex"
+          >
+            <div className="absolute inset-1.5 rounded-full border-2 border-dashed border-[#0f0e14]/40" />
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#0f0e14] leading-none" style={{ fontFamily: "var(--font-fredoka)" }}>
+              EST. 1999
+            </span>
+            <span className="text-[9px] font-bold text-[#0f0e14]/60 mt-1 uppercase" style={{ fontFamily: "var(--font-nunito)" }}>
+              SURABAYA
+            </span>
+            <span className="text-[8px] mt-1">✦</span>
           </div>
         </div>
 
@@ -425,30 +417,47 @@ export default function About() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="space-y-4 text-slate-300 text-base leading-relaxed mb-8">
+            <div
+              className="space-y-4 text-base leading-relaxed mb-8"
+              style={{ color: "#0f0e14", fontFamily: "var(--font-space)" }}
+            >
               <p>
                 Web Developer berdomisili di{" "}
-                <span className="text-white font-semibold">Surabaya, Jawa Timur</span>{" "}
+                <span className="font-semibold">Surabaya, Jawa Timur</span>{" "}
                 dengan fokus utama pada{" "}
-                <span className="text-[#c4b5fd] font-semibold">Laravel, Python &amp; MySQL</span>.
+                <span className="highlight-yellow font-black">Laravel, Python &amp; MySQL</span>.
               </p>
               <p>
-                Berpengalaman membangun sistem enterprise — <span className="text-white font-medium">booking engine</span>, REST API, hingga{" "}
-                <span className="text-[#c4b5fd] font-medium">ETL pipeline</span> yang meng-inject data dari Excel/CSV langsung ke database.
-                Terlatih menggunakan <span className="text-white font-medium">AI Agent Tools &amp; MCP Workflows</span> untuk mempercepat development dengan standar <span className="text-[#c4b5fd] font-medium">clean code</span>.
+                Berpengalaman membangun sistem enterprise — <span className="font-medium">booking engine</span>, REST API, hingga{" "}
+                <span className="font-medium">ETL pipeline</span> yang meng-inject data dari Excel/CSV langsung ke database.
+                Terlatih menggunakan <span className="highlight-teal font-black">AI Agent Tools &amp; MCP Workflows</span> untuk mempercepat development dengan standar <span className="font-medium">clean code</span>.
               </p>
             </div>
 
-            {/* Inline fact chips — lebih ringkas dari grid */}
+            {/* Fact chips */}
             <div className="flex flex-wrap gap-2">
               {FACTS.map((f) => (
                 <div
                   key={f.label}
-                  className="flex items-center gap-2 px-3 py-2 rounded-lg border border-white/[0.06]"
-                  style={{ background: "rgba(255,255,255,0.025)" }}
+                  className="flex items-center gap-2 px-3 py-2 rounded-xl"
+                  style={{
+                    background: "#ffffff",
+                    border: "2px solid #0f0e14",
+                    boxShadow: "3px 3px 0 #0f0e14",
+                  }}
                 >
-                  <span className="text-[9px] font-mono text-[#7c3aed] tracking-widest uppercase whitespace-nowrap">{f.label}</span>
-                  <span className="text-[11px] text-slate-200 font-semibold whitespace-nowrap">{f.value}</span>
+                  <span
+                    className="text-[9px] font-bold tracking-widest uppercase whitespace-nowrap"
+                    style={{ fontFamily: "var(--font-nunito)", color: "#0f0e14" }}
+                  >
+                    {f.label}
+                  </span>
+                  <span
+                    className="text-[11px] font-bold whitespace-nowrap"
+                    style={{ fontFamily: "var(--font-nunito)", color: "#0f0e14" }}
+                  >
+                    {f.value}
+                  </span>
                 </div>
               ))}
             </div>
@@ -462,7 +471,12 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-5"
           >
-            <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-slate-500 mb-5">Domain Mastery</p>
+            <p
+              className="text-[11px] font-bold tracking-[0.3em] uppercase mb-5"
+              style={{ fontFamily: "var(--font-nunito)", color: "#0f0e14" }}
+            >
+              Domain Mastery
+            </p>
             {SKILLS.map((skill, i) => (
               <motion.div
                 key={skill.name}
@@ -472,13 +486,27 @@ export default function About() {
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="flex items-baseline justify-between mb-1.5">
-                  <span className="text-sm font-bold text-slate-200">{skill.name}</span>
-                  <span className="text-[10px] font-mono text-[#7c3aed]">{skill.level}</span>
+                  <span
+                    className="text-sm font-bold"
+                    style={{ fontFamily: "var(--font-nunito)", color: "#0f0e14" }}
+                  >
+                    {skill.name}
+                  </span>
+                  <span
+                    className="text-[10px] font-bold"
+                    style={{ fontFamily: "var(--font-nunito)", color: "#0f0e14" }}
+                  >
+                    {skill.level}
+                  </span>
                 </div>
-                <div className="h-1 w-full bg-white/[0.05] relative overflow-hidden rounded-full">
+                {/* Comic-style skill bar */}
+                <div
+                  className="h-[8px] w-full relative overflow-hidden rounded"
+                  style={{ background: "#e2ddd5", border: "1.5px solid #0f0e14" }}
+                >
                   <motion.div
-                    className="absolute top-0 left-0 h-full rounded-full"
-                    style={{ background: "linear-gradient(90deg, #7c3aed, #a855f7, #c084fc)" }}
+                    className="absolute top-0 left-0 h-full rounded"
+                    style={{ background: "#0f0e14" }}
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.pct}%` }}
                     viewport={{ once: true }}
@@ -496,25 +524,53 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="pt-12 border-t border-white/[0.07]"
+          className="pt-12"
+          style={{ borderTop: "2px solid rgba(15,14,20,0.12)" }}
         >
           {/* Sub-header */}
-          <div className="mb-7 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div className="mb-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative">
             <div>
-              <span className="text-[10px] font-mono text-[#7c3aed] font-semibold uppercase tracking-widest block mb-1">
+              <span
+                className="text-[10px] font-bold uppercase tracking-widest block mb-1"
+                style={{ fontFamily: "var(--font-nunito)", color: "#0f0e14" }}
+              >
                 Full Tech &amp; AI Stack
               </span>
-              <h3 className="text-xl font-black text-white tracking-tight">
+              <h3
+                className="text-xl font-black tracking-tight"
+                style={{ fontFamily: "var(--font-fredoka)", color: "#0f0e14" }}
+              >
                 Teknologi &amp; Tools Yang Digunakan
               </h3>
             </div>
-            <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#7c3aed]/30 bg-[#7c3aed]/10 text-xs font-mono font-semibold text-[#c4b5fd] self-start sm:self-auto">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#a855f7] animate-pulse" />
-              25 Teknologi &amp; Tools Terintegrasi
+            <div className="flex items-center gap-4">
+              {/* Sticky note */}
+              <div
+                className="hidden md:flex p-4 w-28 h-28 items-center justify-center text-center border-2.5 border-[#0f0e14] shadow-[4px_4px_0_#0f0e14] select-none rotate-[-6deg] hover:rotate-0 transition-transform duration-200 relative"
+                style={{
+                  background: "#ff72be",
+                  fontFamily: "var(--font-fredoka)",
+                  fontSize: "10px",
+                  lineHeight: "1.3",
+                  color: "#0f0e14",
+                  zIndex: 20
+                }}
+              >
+                <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-8 h-2.5 bg-white/40 border border-dashed border-black/20" />
+                <span className="font-black tracking-wide uppercase">COFFEE &amp; CODE ☕</span>
+              </div>
+
+              <div
+                className="comic-badge self-start sm:self-auto"
+                style={{ fontFamily: "var(--font-nunito)", background: "#ffffff" }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#0f0e14] animate-pulse inline-block mr-1" />
+                25 Tools Terintegrasi
+              </div>
             </div>
           </div>
 
-          {/* 3-row infinite marquee — edge fade mask */}
+          {/* 3-row infinite marquee */}
           <div
             className="relative overflow-hidden space-y-2.5"
             style={{
@@ -522,27 +578,18 @@ export default function About() {
               WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
             }}
           >
-            {/* ROW 1 — Backend + Database → scroll left */}
             <ToolMarqueeRow
-              items={[
-                ...CATEGORIZED_TOOLS[0].items,
-                ...CATEGORIZED_TOOLS[1].items,
-              ]}
+              items={[...CATEGORIZED_TOOLS[0].items, ...CATEGORIZED_TOOLS[1].items]}
               direction="left"
               speed={28}
             />
-            {/* ROW 2 — AI & Automation → scroll right */}
             <ToolMarqueeRow
               items={CATEGORIZED_TOOLS[3].items}
               direction="right"
               speed={22}
             />
-            {/* ROW 3 — Frontend + DevOps → scroll left */}
             <ToolMarqueeRow
-              items={[
-                ...CATEGORIZED_TOOLS[2].items,
-                ...CATEGORIZED_TOOLS[4].items,
-              ]}
+              items={[...CATEGORIZED_TOOLS[2].items, ...CATEGORIZED_TOOLS[4].items]}
               direction="left"
               speed={26}
             />
@@ -554,28 +601,59 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-5 p-6 rounded-2xl border border-[#7c3aed]/20"
-            style={{ background: "linear-gradient(135deg, rgba(124,58,237,0.06) 0%, rgba(168,85,247,0.02) 100%)" }}
           >
-            <div>
-              <p className="text-white font-black text-lg mb-1">Tertarik untuk berkolaborasi?</p>
-              <p className="text-slate-400 text-sm">Saya terbuka untuk full-time, freelance, dan diskusi proyek menarik.</p>
-            </div>
-            <div className="flex gap-3 flex-shrink-0">
-              <a
-                href="#portfolio"
-                className="px-5 py-2.5 rounded-xl text-sm font-bold text-slate-300 border border-white/[0.08] hover:border-[#7c3aed]/40 hover:text-white transition-all duration-200"
-                style={{ background: "rgba(255,255,255,0.03)" }}
-              >
-                Lihat Karya
-              </a>
-              <a
-                href="#contact"
-                className="px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-all duration-200 hover:opacity-90 hover:shadow-[0_0_20px_rgba(124,58,237,0.4)]"
-                style={{ background: "linear-gradient(135deg, #7c3aed, #a855f7)" }}
-              >
-                Hubungi Saya →
-              </a>
+            <div
+              className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-5 p-6 rounded-2xl comic-card relative"
+              style={{
+                background: "#ffffff",
+                border: "2.5px solid #0f0e14",
+                boxShadow: "6px 6px 0 #0f0e14",
+              }}
+            >
+              <div className="tape-top-left" />
+              <div className="tape-top-right" />
+              <div>
+                <p
+                  className="font-black text-lg mb-1"
+                  style={{ fontFamily: "var(--font-fredoka)", color: "#0f0e14" }}
+                >
+                  Tertarik untuk berkolaborasi?
+                </p>
+                <p
+                  className="text-sm"
+                  style={{ fontFamily: "var(--font-space)", color: "#0f0e14" }}
+                >
+                  Saya terbuka untuk full-time, freelance, dan diskusi proyek menarik.
+                </p>
+              </div>
+              <div className="flex gap-3 flex-shrink-0">
+                <a
+                  href="#portfolio"
+                  className="comic-btn px-5 py-2.5 text-sm"
+                  style={{
+                    fontFamily: "var(--font-nunito)",
+                    background: "transparent",
+                    color: "#0f0e14",
+                    border: "2px solid #0f0e14",
+                    boxShadow: "3px 3px 0 #0f0e14",
+                  }}
+                >
+                  Lihat Karya
+                </a>
+                <a
+                  href="#contact"
+                  className="comic-btn px-5 py-2.5 text-sm"
+                  style={{
+                    fontFamily: "var(--font-nunito)",
+                    background: "#0f0e14",
+                    color: "#f5f0e8",
+                    border: "2px solid #0f0e14",
+                    boxShadow: "3px 3px 0 rgba(15,14,20,0.3)",
+                  }}
+                >
+                  Hubungi Saya →
+                </a>
+              </div>
             </div>
           </motion.div>
         </motion.div>

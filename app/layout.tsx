@@ -1,11 +1,43 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import {
+  Bangers,
+  Fredoka,
+  Nunito,
+  Space_Grotesk,
+} from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+// Display / hero font — comic book style
+const bangers = Bangers({
+  weight: "400",
+  variable: "--font-bangers",
   subsets: ["latin"],
+  display: "swap",
+});
+
+// Section heading — rounded cartoon
+const fredoka = Fredoka({
+  weight: "400",
+  variable: "--font-fredoka",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+// UI / nav / buttons — bold & friendly
+const nunito = Nunito({
+  weight: ["400", "600", "700", "800", "900"],
+  variable: "--font-nunito",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+// Body text — clean & readable
+const spaceGrotesk = Space_Grotesk({
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -69,7 +101,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${inter.variable} scroll-smooth antialiased`}>
+    <html
+      lang="id"
+      className={`${bangers.variable} ${fredoka.variable} ${nunito.variable} ${spaceGrotesk.variable} scroll-smooth antialiased`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           type="application/ld+json"
@@ -101,7 +137,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col font-sans">
+      <body className="min-h-screen flex flex-col" style={{ fontFamily: "var(--font-space, 'Space Grotesk', sans-serif)" }} suppressHydrationWarning>
         {children}
         <Analytics />
       </body>

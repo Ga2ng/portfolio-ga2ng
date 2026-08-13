@@ -1,71 +1,214 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f0a1f;
-  --foreground: #e2e8f0;
-  --primary: #7c3aed;
-  --primary-light: #a855f7;
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --background: #f5f0e8;
+  --foreground: #0f0e14;
+  --bg-card: #ffffff;
+  --cream: #f5f0e8;
+  --cream-dark: #e2ddd5;
+  --ink: #0f0e14;
+
+  /* Comic shadow system */
+  --shadow-comic-xs: 2px 2px 0px #0f0e14;
+  --shadow-comic-sm: 3px 3px 0px #0f0e14;
+  --shadow-comic-md: 5px 5px 0px #0f0e14;
+  --shadow-comic-lg: 8px 8px 0px #0f0e14;
+  --shadow-comic-hover: 1px 1px 0px #0f0e14;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-light: var(--primary-light);
-  --color-glass-bg: var(--glass-bg);
-  --color-glass-border: var(--glass-border);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-space);
+  --font-bangers: var(--font-bangers);
+  --font-fredoka: var(--font-fredoka);
+  --font-nunito: var(--font-nunito);
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  background-image: 
-    radial-gradient(circle at 15% 50%, rgba(124, 58, 237, 0.15), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.15), transparent 25%);
-  background-attachment: fixed;
+  font-family: var(--font-space, 'Space Grotesk', sans-serif);
   overflow-x: hidden;
+  
+  /* Binder Loose-Leaf grid paper pattern (fine blue lines + pinkish-red margin line) */
+  background-image: 
+    linear-gradient(rgba(30, 144, 255, 0.15) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(30, 144, 255, 0.15) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(255, 75, 75, 0.35) 2.5px, transparent 2.5px);
+  background-size: 32px 32px, 32px 32px, 100% 100%;
+  background-position: 0 0, 0 0, 95px 0;
+  background-attachment: fixed;
 }
 
-/* Glassmorphism utilities */
-.glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+/* ── Comic utility classes ─────────────────────────────── */
+.comic-card {
+  background: var(--bg-card);
+  border: 2.5px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: var(--shadow-comic-md);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
-.glass-card {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
+.comic-card:hover {
+  transform: translate(3px, 3px);
+  box-shadow: var(--shadow-comic-xs);
 }
 
-.glass-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(168, 85, 247, 0.3);
-  box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.3);
+.comic-btn {
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  font-family: var(--font-nunito, 'Nunito', sans-serif);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  box-shadow: var(--shadow-comic-sm);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Scrollbar styles */
+.comic-btn:hover {
+  transform: translate(3px, 3px);
+  box-shadow: var(--shadow-comic-hover);
+}
+
+.comic-pill {
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-family: var(--font-nunito, 'Nunito', sans-serif);
+  font-weight: 800;
+  box-shadow: var(--shadow-comic-xs);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.comic-pill:hover {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.comic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-card);
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: var(--shadow-comic-xs);
+  padding: 4px 10px;
+  font-family: var(--font-nunito, 'Nunito', sans-serif);
+  font-weight: 800;
+  color: var(--ink);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ── Pop-punk stabilo highlights ────────────────────────── */
+.highlight-yellow {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  padding: 0 4px;
+}
+.highlight-yellow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ffe135;
+  transform: rotate(-1deg);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+.highlight-pink {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  padding: 0 4px;
+}
+.highlight-pink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ff72be;
+  transform: rotate(1deg);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+.highlight-teal {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  padding: 0 4px;
+}
+.highlight-teal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #73fcd6;
+  transform: rotate(-1.5deg);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+/* ── Masking tape scrapbook overlay ─────────────────────── */
+.tape-top-left {
+  position: absolute;
+  top: -12px;
+  left: 10px;
+  width: 70px;
+  height: 20px;
+  background: rgba(242, 237, 226, 0.85);
+  border: 1px dashed rgba(15, 14, 20, 0.3);
+  transform: rotate(-30deg);
+  z-index: 20;
+}
+
+.tape-top-right {
+  position: absolute;
+  top: -12px;
+  right: 10px;
+  width: 70px;
+  height: 20px;
+  background: rgba(242, 237, 226, 0.85);
+  border: 1px dashed rgba(15, 14, 20, 0.3);
+  transform: rotate(30deg);
+  z-index: 20;
+}
+
+/* ── Halftone & Scribble patterns ──────────────────────── */
+.halftone-bg {
+  background-image: radial-gradient(circle, rgba(15,14,20,0.06) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
+/* Scribbled grid lines (notebook look) */
+.grid-scribble-bg {
+  background-image: 
+    linear-gradient(rgba(15,14,20,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,14,20,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f0a1f;
+  background: #f5f0e8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(124, 58, 237, 0.5);
-  border-radius: 5px;
+  background: #0f0e14;
+  border: 2px solid #f5f0e8;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(168, 85, 247, 0.8);
+  background: #333333;
 }

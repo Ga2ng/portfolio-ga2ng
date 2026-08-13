@@ -6,10 +6,19 @@ import { GitCommit, GitFork, Star, ExternalLink, RefreshCw, BookOpen, Users, Cod
 
 function SectionLabel({ num, label }: { num: string; label: string }) {
   return (
-    <div className="flex items-center gap-3 mb-10">
-      <span className="text-[11px] font-mono text-[#7c3aed]">{num}</span>
-      <span className="h-px w-8 bg-[#7c3aed]/60" />
-      <span className="text-[11px] font-bold tracking-[0.3em] text-[#a855f7] uppercase">{label}</span>
+    <div className="flex items-center gap-3 mb-12">
+      <span 
+        className="px-5 py-2.5 border-3 border-[#0f0e14] bg-[#ffffff] text-[#0f0e14] font-black rounded-xl shadow-[4px_4px_0_#0f0e14] rotate-[-2deg] inline-flex items-center gap-2.5 text-sm uppercase tracking-wider transition-transform hover:rotate-0 duration-200"
+        style={{ fontFamily: "var(--font-nunito)" }}
+      >
+        <span
+          className="text-base font-black opacity-60"
+          style={{ fontFamily: "var(--font-bangers)", letterSpacing: "0.06em" }}
+        >
+          {num}
+        </span>
+        {label}
+      </span>
     </div>
   );
 }
@@ -162,7 +171,7 @@ export default function GitHubContributions() {
             name,
             count,
             percentage: Math.round((count / (totalLangRepos || 1)) * 100),
-            color: LANG_COLORS[name] || "#a855f7",
+            color: LANG_COLORS[name] || "#0f0e14",
           }))
           .sort((a, b) => b.count - a.count)
           .slice(0, 6);
@@ -184,24 +193,24 @@ export default function GitHubContributions() {
     fetchGitHubStats();
   }, [fetchGitHubStats]);
 
-  // Color Palette matching website theme
+  // Grayscale levels for calendar grid
   const getPurpleColor = (level: number) => {
     switch (level) {
       case 0:
-        return "rgba(255, 255, 255, 0.03)";
+        return "rgba(15, 14, 20, 0.05)";
       case 1:
-        return "#4c1d95";
+        return "rgba(15, 14, 20, 0.25)";
       case 2:
-        return "#6d28d9";
+        return "rgba(15, 14, 20, 0.5)";
       case 3:
-        return "#7c3aed";
+        return "rgba(15, 14, 20, 0.75)";
       case 4:
       default:
-        return "#a855f7";
+        return "#0f0e14";
     }
   };
 
-  // Month labels calculation (Jan -> Dec chronologically)
+  // Month labels calculation
   const monthLabels: { name: string; weekIndex: number }[] = [];
   let lastMonthName = "";
   weeks.forEach((w, wIdx) => {
@@ -220,19 +229,15 @@ export default function GitHubContributions() {
   const svgHeight = 140;
 
   return (
-    <section id="github" className="relative py-28 px-6 overflow-hidden">
-      {/* Background ambient dot grid */}
+    <section id="github" className="relative py-28 px-6 overflow-hidden" style={{ background: "#f5f0e8" }}>
+      {/* Halftone grid pattern */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-20"
+        className="absolute inset-0 pointer-events-none halftone-bg opacity-30"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(124,58,237,0.14) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
           maskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent)",
           WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent)",
         }}
       />
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 rounded-full bg-[#7c3aed]/8 blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-[#a855f7]/6 blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto max-w-6xl relative">
         {/* Section Header */}
@@ -245,20 +250,18 @@ export default function GitHubContributions() {
         >
           <div>
             <SectionLabel num="04" label="GitHub Activity" />
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-[1.05]">
+            <h2
+              className="text-4xl md:text-5xl font-black tracking-tight leading-[1.05]"
+              style={{ fontFamily: "var(--font-fredoka, 'Fredoka One', cursive)", color: "#0f0e14" }}
+            >
               Aktivitas Kontribusi<br />
-              <span
-                className="bg-clip-text text-transparent"
-                style={{ backgroundImage: "linear-gradient(135deg, #c4b5fd, #a855f7, #7c3aed)" }}
-              >
-                GitHub @{GITHUB_USERNAME}
-              </span>
+              <span style={{ color: "#0f0e14" }}>GitHub @{GITHUB_USERNAME}</span>
             </h2>
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono font-semibold bg-[#7c3aed]/10 text-[#a855f7] border border-[#7c3aed]/20">
-              <span className="w-2 h-2 rounded-full bg-[#a855f7] animate-pulse" />
+            <span className="comic-badge" style={{ fontFamily: "var(--font-nunito)", background: "#ffffff" }}>
+              <span className="w-2 h-2 rounded-full bg-[#0f0e14] animate-pulse mr-1 inline-block" />
               Direct GitHub.com Scraping
             </span>
             <button
@@ -266,168 +269,217 @@ export default function GitHubContributions() {
                 fetchGraphData(selectedYear);
                 fetchGitHubStats();
               }}
-              className="p-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] text-slate-400 hover:text-white border border-white/[0.06] transition-colors"
+              className="p-2.5 rounded-lg transition-all cursor-pointer"
+              style={{
+                background: "#ffffff",
+                border: "2px solid #0f0e14",
+                boxShadow: "3px 3px 0 #0f0e14",
+                color: "#0f0e14",
+              }}
               title="Refresh Data"
             >
-              <RefreshCw size={14} className={loadingGraph || loadingStats ? "animate-spin text-[#a855f7]" : ""} />
+              <RefreshCw size={14} className={loadingGraph || loadingStats ? "animate-spin" : ""} />
             </button>
           </div>
         </motion.div>
 
-        {/* MAIN CONTRIBUTION GRAPH (100% OFFICIAL ACCURATE DATA FROM GITHUB.COM) */}
+        {/* MAIN CONTRIBUTION GRAPH CARD */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative rounded-2xl p-6 md:p-8 mb-8 border border-white/[0.06] hover:border-[#7c3aed]/30 transition-all duration-300 backdrop-blur-md overflow-hidden"
-          style={{ background: "rgba(255,255,255,0.02)" }}
         >
-          {/* Header Bar with Exact Total Count & Year Selector */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.04]">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-[#7c3aed]/10 border border-[#7c3aed]/20 flex items-center justify-center text-[#a855f7]">
-                <GitCommit size={18} />
-              </div>
-              <div>
-                <h3 className="text-sm font-bold text-white tracking-wide">
-                  {totalContributions !== null
-                    ? `${totalContributions} Kontribusi`
-                    : "Memuat kontribusi..."}
-                </h3>
-                <p className="text-[11px] text-slate-400 font-mono">
-                  tahun {selectedYear} di GitHub
-                </p>
-              </div>
-            </div>
-
-            {/* Year Selector Tabs (2026, 2025, 2024, 2023, 2022) */}
-            <div className="flex items-center gap-1.5 p-1 bg-white/[0.02] border border-white/[0.06] rounded-xl flex-wrap">
-              <span className="text-[10px] font-mono text-slate-500 px-2 flex items-center gap-1">
-                <Calendar size={12} /> Tahun:
-              </span>
-              {YEARS.map((yr) => (
-                <button
-                  key={yr}
-                  onClick={() => setSelectedYear(yr)}
-                  className={`px-3.5 py-1 text-xs font-mono font-bold rounded-lg transition-all ${
-                    selectedYear === yr
-                      ? "bg-[#7c3aed] text-white shadow-[0_0_18px_rgba(124,58,237,0.5)] scale-105"
-                      : "text-slate-400 hover:text-white hover:bg-white/[0.05]"
-                  }`}
+          <div
+            className="relative rounded-2xl p-6 md:p-8 mb-8 overflow-hidden comic-card"
+            style={{
+              background: "#ffffff",
+              border: "2.5px solid #0f0e14",
+              boxShadow: "8px 8px 0 #0f0e14",
+            }}
+          >
+            {/* Header Bar */}
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4" style={{ borderBottom: "1.5px solid rgba(15,14,20,0.1)" }}>
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center border-2 border-[#0f0e14]"
+                  style={{ background: "#f5f0e8", color: "#0f0e14" }}
                 >
-                  {yr}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Hover Tooltip display */}
-          <div className="h-7 flex items-center text-xs font-mono text-slate-300 mb-3">
-            {hoveredDay ? (
-              <span className="bg-[#7c3aed]/20 px-3 py-1.5 rounded-md border border-[#7c3aed]/40 text-[#c4b5fd] font-bold">
-                {hoveredDay.count > 0 ? `${hoveredDay.count} kontribusi` : "Tidak ada kontribusi"} pada {hoveredDay.date}
-              </span>
-            ) : (
-              <span className="text-slate-500 text-[11px]">
-                Arahkan kursor ke kotak warna untuk melihat detail per hari
-              </span>
-            )}
-          </div>
-
-          {/* ACCURATE SVG VECTOR GRID */}
-          {loadingGraph ? (
-            <div className="h-36 flex items-center justify-center text-slate-500 font-mono text-xs gap-2">
-              <RefreshCw size={16} className="animate-spin text-[#a855f7]" />
-              Mengambil data kontribusi resmi tahun {selectedYear}...
-            </div>
-          ) : weeks.length > 0 ? (
-            <div className="overflow-x-auto pb-3 pt-1 scrollbar-thin">
-              <svg
-                width={svgWidth}
-                height={svgHeight}
-                className="select-none overflow-visible w-full min-w-[760px]"
-              >
-                {/* Month labels (Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec) */}
-                <g className="text-[10px] font-mono fill-slate-400">
-                  {monthLabels.map((m) => (
-                    <text
-                      key={`${m.name}-${m.weekIndex}`}
-                      x={35 + m.weekIndex * 14}
-                      y={12}
-                    >
-                      {m.name}
-                    </text>
-                  ))}
-                </g>
-
-                {/* Day labels (Mon, Wed, Fri) */}
-                <g className="text-[9px] font-mono fill-slate-500">
-                  <text x={5} y={41}>Mon</text>
-                  <text x={5} y={69}>Wed</text>
-                  <text x={5} y={97}>Fri</text>
-                </g>
-
-                {/* Squares Grid */}
-                <g transform="translate(35, 25)">
-                  {weeks.map((week, wIdx) => (
-                    <g key={wIdx} transform={`translate(${wIdx * 14}, 0)`}>
-                      {week.map((day, dIdx) => (
-                        <rect
-                          key={`${wIdx}-${dIdx}`}
-                          x={0}
-                          y={dIdx * 14}
-                          width={11}
-                          height={11}
-                          rx={2}
-                          fill={getPurpleColor(day.level)}
-                          stroke={day.level > 0 ? "rgba(168, 85, 247, 0.4)" : "rgba(255, 255, 255, 0.05)"}
-                          strokeWidth={0.5}
-                          className="transition-all duration-150 cursor-pointer hover:scale-125 hover:stroke-[#a855f7] hover:stroke-2"
-                          onMouseEnter={() =>
-                            setHoveredDay({ date: day.date, count: day.count })
-                          }
-                          onMouseLeave={() => setHoveredDay(null)}
-                        />
-                      ))}
-                    </g>
-                  ))}
-                </g>
-              </svg>
-            </div>
-          ) : (
-            <div className="text-center py-10 text-slate-500 font-mono text-xs">
-              Tidak ada data kontribusi untuk tahun {selectedYear}
-            </div>
-          )}
-
-          {/* Footer Bar */}
-          <div className="mt-6 pt-4 border-t border-white/[0.04] flex items-center justify-between text-[11px] font-mono text-slate-400">
-            <a
-              href={`https://github.com/${GITHUB_USERNAME}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#a855f7] hover:text-[#c4b5fd] hover:underline flex items-center gap-1 font-semibold transition-colors"
-            >
-              github.com/{GITHUB_USERNAME}
-              <ExternalLink size={12} />
-            </a>
-
-            <div className="flex items-center gap-2">
-              <span>Sedikit</span>
-              <div className="flex gap-[3px]">
-                <div className="w-[10px] h-[10px] rounded-[2px] bg-white/[0.03] border border-white/5" />
-                <div className="w-[10px] h-[10px] rounded-[2px] bg-[#4c1d95]" />
-                <div className="w-[10px] h-[10px] rounded-[2px] bg-[#6d28d9]" />
-                <div className="w-[10px] h-[10px] rounded-[2px] bg-[#7c3aed]" />
-                <div className="w-[10px] h-[10px] rounded-[2px] bg-[#a855f7]" />
+                  <GitCommit size={18} />
+                </div>
+                <div>
+                  <h3
+                    className="text-sm font-black tracking-wide"
+                    style={{ fontFamily: "var(--font-fredoka)", color: "#0f0e14" }}
+                  >
+                    {totalContributions !== null
+                      ? `${totalContributions} Kontribusi`
+                      : "Memuat kontribusi..."}
+                  </h3>
+                  <p
+                    className="text-[11px] font-bold"
+                    style={{ fontFamily: "var(--font-nunito)", color: "rgba(15,14,20,0.5)" }}
+                  >
+                    tahun {selectedYear} di GitHub
+                  </p>
+                </div>
               </div>
-              <span>Banyak</span>
+
+              {/* Year Selector Tabs */}
+              <div
+                className="flex items-center gap-1.5 p-1 rounded-xl flex-wrap"
+                style={{ background: "#f5f0e8", border: "2px solid #0f0e14" }}
+              >
+                <span
+                  className="text-[10px] font-bold px-2 flex items-center gap-1"
+                  style={{ fontFamily: "var(--font-nunito)", color: "#0f0e14" }}
+                >
+                  <Calendar size={12} /> Tahun:
+                </span>
+                {YEARS.map((yr) => (
+                  <button
+                    key={yr}
+                    onClick={() => setSelectedYear(yr)}
+                    className={`px-3 py-1 text-xs font-bold rounded-lg transition-all ${
+                      selectedYear === yr
+                        ? "bg-[#0f0e14] text-[#f5f0e8] scale-105"
+                        : "text-[#0f0e14] hover:bg-black/10"
+                    }`}
+                    style={{ fontFamily: "var(--font-nunito)" }}
+                  >
+                    {yr}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Hover Tooltip display */}
+            <div className="h-7 flex items-center text-xs mb-3">
+              {hoveredDay ? (
+                <span
+                  className="px-3 py-1.5 rounded-lg font-bold"
+                  style={{
+                    background: "#0f0e14",
+                    color: "#f5f0e8",
+                    border: "2px solid #0f0e14",
+                    fontFamily: "var(--font-nunito)",
+                  }}
+                >
+                  {hoveredDay.count > 0 ? `${hoveredDay.count} kontribusi` : "Tidak ada kontribusi"} pada {hoveredDay.date}
+                </span>
+              ) : (
+                <span
+                  className="text-[11px] font-semibold"
+                  style={{ fontFamily: "var(--font-space)", color: "rgba(15,14,20,0.45)" }}
+                >
+                  Arahkan kursor ke kotak warna untuk melihat detail per hari
+                </span>
+              )}
+            </div>
+
+            {/* ACCURATE SVG VECTOR GRID */}
+            {loadingGraph ? (
+              <div
+                className="h-36 flex items-center justify-center text-xs gap-2 font-bold"
+                style={{ fontFamily: "var(--font-space)", color: "rgba(15,14,20,0.5)" }}
+              >
+                <RefreshCw size={16} className="animate-spin" />
+                Mengambil data kontribusi resmi tahun {selectedYear}...
+              </div>
+            ) : weeks.length > 0 ? (
+              <div className="overflow-x-auto pb-3 pt-1 scrollbar-thin">
+                <svg
+                  width={svgWidth}
+                  height={svgHeight}
+                  className="select-none overflow-visible w-full min-w-[760px]"
+                >
+                  {/* Month labels */}
+                  <g className="text-[10px] font-bold" style={{ fontFamily: "var(--font-nunito)", fill: "#0f0e14" }}>
+                    {monthLabels.map((m) => (
+                      <text
+                        key={`${m.name}-${m.weekIndex}`}
+                        x={35 + m.weekIndex * 14}
+                        y={12}
+                      >
+                        {m.name}
+                      </text>
+                    ))}
+                  </g>
+
+                  {/* Day labels */}
+                  <g className="text-[9px] font-bold" style={{ fontFamily: "var(--font-nunito)", fill: "rgba(15,14,20,0.5)" }}>
+                    <text x={5} y={41}>Mon</text>
+                    <text x={5} y={69}>Wed</text>
+                    <text x={5} y={97}>Fri</text>
+                  </g>
+
+                  {/* Squares Grid */}
+                  <g transform="translate(35, 25)">
+                    {weeks.map((week, wIdx) => (
+                      <g key={wIdx} transform={`translate(${wIdx * 14}, 0)`}>
+                        {week.map((day, dIdx) => (
+                          <rect
+                            key={`${wIdx}-${dIdx}`}
+                            x={0}
+                            y={dIdx * 14}
+                            width={11}
+                            height={11}
+                            rx={2}
+                            fill={getPurpleColor(day.level)}
+                            stroke="#0f0e14"
+                            strokeWidth={day.level > 0 ? 1 : 0.5}
+                            className="transition-all duration-150 cursor-pointer hover:scale-125"
+                            onMouseEnter={() =>
+                              setHoveredDay({ date: day.date, count: day.count })
+                            }
+                            onMouseLeave={() => setHoveredDay(null)}
+                          />
+                        ))}
+                      </g>
+                    ))}
+                  </g>
+                </svg>
+              </div>
+            ) : (
+              <div
+                className="text-center py-10 text-xs font-semibold"
+                style={{ fontFamily: "var(--font-space)", color: "rgba(15,14,20,0.5)" }}
+              >
+                Tidak ada data kontribusi untuk tahun {selectedYear}
+              </div>
+            )}
+
+            {/* Footer Bar */}
+            <div
+              className="mt-6 pt-4 flex items-center justify-between text-[11px]"
+              style={{ borderTop: "1.5px solid rgba(15,14,20,0.1)", fontFamily: "var(--font-space)", color: "#0f0e14" }}
+            >
+              <a
+                href={`https://github.com/${GITHUB_USERNAME}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline flex items-center gap-1 font-black transition-colors"
+              >
+                github.com/{GITHUB_USERNAME}
+                <ExternalLink size={12} />
+              </a>
+
+              <div className="flex items-center gap-2">
+                <span>Sedikit</span>
+                <div className="flex gap-[3px]">
+                  <div className="w-[10.5px] h-[10.5px] rounded-[2px] border border-[#0f0e14]" style={{ background: "rgba(15, 14, 20, 0.05)" }} />
+                  <div className="w-[10.5px] h-[10.5px] rounded-[2px] border border-[#0f0e14]" style={{ background: "rgba(15, 14, 20, 0.25)" }} />
+                  <div className="w-[10.5px] h-[10.5px] rounded-[2px] border border-[#0f0e14]" style={{ background: "rgba(15, 14, 20, 0.5)" }} />
+                  <div className="w-[10.5px] h-[10.5px] rounded-[2px] border border-[#0f0e14]" style={{ background: "rgba(15, 14, 20, 0.75)" }} />
+                  <div className="w-[10.5px] h-[10.5px] rounded-[2px] border border-[#0f0e14]" style={{ background: "#0f0e14" }} />
+                </div>
+                <span>Banyak</span>
+              </div>
             </div>
           </div>
         </motion.div>
 
-        {/* STATS CARDS (GLASSMORPHISM MATCHING WEBSITE THEME) */}
+        {/* STATS CARDS */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -436,124 +488,192 @@ export default function GitHubContributions() {
           className="grid md:grid-cols-2 gap-6 mb-10"
         >
           {/* Card 1: Account Overview */}
-          <div
-            className="rounded-2xl p-6 border border-white/[0.05] hover:border-[#7c3aed]/30 transition-all duration-300 backdrop-blur-md flex flex-col justify-between"
-            style={{ background: "rgba(255,255,255,0.02)" }}
-          >
+          <div className="comic-card p-6 flex flex-col justify-between" style={{ background: "#ffffff" }}>
             <div>
-              <div className="flex items-center justify-between mb-6 pb-3 border-b border-white/[0.04]">
-                <div className="flex items-center gap-2 text-[#a855f7]">
+              <div className="flex items-center justify-between mb-6 pb-3" style={{ borderBottom: "1.5px solid rgba(15,14,20,0.1)" }}>
+                <div className="flex items-center gap-2" style={{ color: "#0f0e14" }}>
                   <Code size={18} />
-                  <h3 className="text-sm font-bold text-white tracking-wide uppercase font-mono">
+                  <h3
+                    className="text-sm font-black uppercase tracking-wide"
+                    style={{ fontFamily: "var(--font-fredoka)" }}
+                  >
                     Statistik Akun GitHub
                   </h3>
                 </div>
-                <span className="text-[11px] font-mono text-[#7c3aed]">@{GITHUB_USERNAME}</span>
+                <span
+                  className="text-[11px] font-bold"
+                  style={{ fontFamily: "var(--font-nunito)", color: "rgba(15,14,20,0.5)" }}
+                >
+                  @{GITHUB_USERNAME}
+                </span>
               </div>
 
               {loadingStats ? (
-                <div className="py-8 flex items-center justify-center text-slate-500 text-xs font-mono gap-2">
-                  <RefreshCw size={14} className="animate-spin text-[#a855f7]" />
+                <div
+                  className="py-8 flex items-center justify-center text-xs gap-2 font-bold"
+                  style={{ fontFamily: "var(--font-space)", color: "rgba(15,14,20,0.5)" }}
+                >
+                  <RefreshCw size={14} className="animate-spin" />
                   Mengambil statistik GitHub API...
                 </div>
               ) : (
                 <div className="grid grid-cols-2 gap-3">
                   <div
-                    className="p-4 rounded-xl border border-white/[0.04]"
-                    style={{ background: "rgba(255,255,255,0.02)" }}
+                    className="p-4 rounded-xl"
+                    style={{ background: "#f5f0e8", border: "2px solid #0f0e14" }}
                   >
-                    <div className="flex items-center gap-2 text-[#a855f7] mb-1">
+                    <div className="flex items-center gap-2 mb-1" style={{ color: "#0f0e14" }}>
                       <BookOpen size={16} />
-                      <span className="text-[10px] font-mono text-slate-400 uppercase">Repositories</span>
+                      <span
+                        className="text-[10px] font-bold uppercase"
+                        style={{ fontFamily: "var(--font-nunito)", opacity: 0.7 }}
+                      >
+                        Repositories
+                      </span>
                     </div>
-                    <p className="text-2xl font-black text-white">{profile?.public_repos || 35}</p>
+                    <p
+                      className="text-2xl font-black"
+                      style={{ fontFamily: "var(--font-fredoka)", color: "#0f0e14" }}
+                    >
+                      {profile?.public_repos || 35}
+                    </p>
                   </div>
 
                   <div
-                    className="p-4 rounded-xl border border-white/[0.04]"
-                    style={{ background: "rgba(255,255,255,0.02)" }}
+                    className="p-4 rounded-xl"
+                    style={{ background: "#f5f0e8", border: "2px solid #0f0e14" }}
                   >
-                    <div className="flex items-center gap-2 text-[#e3b341] mb-1">
+                    <div className="flex items-center gap-2 mb-1" style={{ color: "#0f0e14" }}>
                       <Star size={16} />
-                      <span className="text-[10px] font-mono text-slate-400 uppercase">Stars Earned</span>
+                      <span
+                        className="text-[10px] font-bold uppercase"
+                        style={{ fontFamily: "var(--font-nunito)", opacity: 0.7 }}
+                      >
+                        Stars Earned
+                      </span>
                     </div>
-                    <p className="text-2xl font-black text-white">{totalStars}</p>
+                    <p
+                      className="text-2xl font-black"
+                      style={{ fontFamily: "var(--font-fredoka)", color: "#0f0e14" }}
+                    >
+                      {totalStars}
+                    </p>
                   </div>
 
                   <div
-                    className="p-4 rounded-xl border border-white/[0.04]"
-                    style={{ background: "rgba(255,255,255,0.02)" }}
+                    className="p-4 rounded-xl"
+                    style={{ background: "#f5f0e8", border: "2px solid #0f0e14" }}
                   >
-                    <div className="flex items-center gap-2 text-[#c4b5fd] mb-1">
+                    <div className="flex items-center gap-2 mb-1" style={{ color: "#0f0e14" }}>
                       <Users size={16} />
-                      <span className="text-[10px] font-mono text-slate-400 uppercase">Followers</span>
+                      <span
+                        className="text-[10px] font-bold uppercase"
+                        style={{ fontFamily: "var(--font-nunito)", opacity: 0.7 }}
+                      >
+                        Followers
+                      </span>
                     </div>
-                    <p className="text-2xl font-black text-white">{profile?.followers || 8}</p>
+                    <p
+                      className="text-2xl font-black"
+                      style={{ fontFamily: "var(--font-fredoka)", color: "#0f0e14" }}
+                    >
+                      {profile?.followers || 8}
+                    </p>
                   </div>
 
                   <div
-                    className="p-4 rounded-xl border border-white/[0.04]"
-                    style={{ background: "rgba(255,255,255,0.02)" }}
+                    className="p-4 rounded-xl"
+                    style={{ background: "#f5f0e8", border: "2px solid #0f0e14" }}
                   >
-                    <div className="flex items-center gap-2 text-[#7c3aed] mb-1">
+                    <div className="flex items-center gap-2 mb-1" style={{ color: "#0f0e14" }}>
                       <GitFork size={16} />
-                      <span className="text-[10px] font-mono text-slate-400 uppercase">Following</span>
+                      <span
+                        className="text-[10px] font-bold uppercase"
+                        style={{ fontFamily: "var(--font-nunito)", opacity: 0.7 }}
+                      >
+                        Following
+                      </span>
                     </div>
-                    <p className="text-2xl font-black text-white">{profile?.following || 6}</p>
+                    <p
+                      className="text-2xl font-black"
+                      style={{ fontFamily: "var(--font-fredoka)", color: "#0f0e14" }}
+                    >
+                      {profile?.following || 6}
+                    </p>
                   </div>
                 </div>
               )}
             </div>
 
-            <div className="mt-6 pt-3 border-t border-white/[0.04] flex items-center justify-between text-[10px] font-mono text-slate-500">
+            <div
+              className="mt-6 pt-3 flex items-center justify-between text-[10px] font-bold"
+              style={{
+                borderTop: "1.5px solid rgba(15,14,20,0.1)",
+                fontFamily: "var(--font-space)",
+                color: "rgba(15,14,20,0.5)",
+              }}
+            >
               <span>Aktif Sejak: 2022</span>
               <span>Official GitHub REST API</span>
             </div>
           </div>
 
           {/* Card 2: Top Languages Breakdown */}
-          <div
-            className="rounded-2xl p-6 border border-white/[0.05] hover:border-[#7c3aed]/30 transition-all duration-300 backdrop-blur-md flex flex-col justify-between"
-            style={{ background: "rgba(255,255,255,0.02)" }}
-          >
+          <div className="comic-card p-6 flex flex-col justify-between" style={{ background: "#ffffff" }}>
             <div>
-              <div className="flex items-center justify-between mb-6 pb-3 border-b border-white/[0.04]">
-                <div className="flex items-center gap-2 text-[#a855f7]">
+              <div className="flex items-center justify-between mb-6 pb-3" style={{ borderBottom: "1.5px solid rgba(15,14,20,0.1)" }}>
+                <div className="flex items-center gap-2" style={{ color: "#0f0e14" }}>
                   <GitFork size={18} />
-                  <h3 className="text-sm font-bold text-white tracking-wide uppercase font-mono">
+                  <h3
+                    className="text-sm font-black uppercase tracking-wide"
+                    style={{ fontFamily: "var(--font-fredoka)" }}
+                  >
                     Top Languages
                   </h3>
                 </div>
-                <span className="text-[11px] font-mono text-[#7c3aed]">By Repositories</span>
+                <span
+                  className="text-[11px] font-bold"
+                  style={{ fontFamily: "var(--font-nunito)", color: "rgba(15,14,20,0.5)" }}
+                >
+                  By Repositories
+                </span>
               </div>
 
               {loadingStats ? (
-                <div className="py-8 flex items-center justify-center text-slate-500 text-xs font-mono gap-2">
-                  <RefreshCw size={14} className="animate-spin text-[#a855f7]" />
+                <div
+                  className="py-8 flex items-center justify-center text-xs gap-2 font-bold"
+                  style={{ fontFamily: "var(--font-space)", color: "rgba(15,14,20,0.5)" }}
+                >
+                  <RefreshCw size={14} className="animate-spin" />
                   Mengalkulasi bahasa...
                 </div>
               ) : (
                 <div className="space-y-3.5">
                   {languages.map((lang) => (
                     <div key={lang.name}>
-                      <div className="flex justify-between items-center text-xs mb-1.5 font-mono">
-                        <span className="flex items-center gap-2 text-slate-200 font-semibold">
+                      <div
+                        className="flex justify-between items-center text-xs mb-1.5 font-bold"
+                        style={{ fontFamily: "var(--font-nunito)", color: "#0f0e14" }}
+                      >
+                        <span className="flex items-center gap-2">
                           <span
-                            className="w-2.5 h-2.5 rounded-full"
-                            style={{ backgroundColor: lang.color }}
+                            className="w-2.5 h-2.5 rounded-full border"
+                            style={{ backgroundColor: lang.color, borderColor: "#0f0e14" }}
                           />
                           {lang.name}
                         </span>
-                        <span className="text-slate-400 font-mono text-[11px]">
+                        <span style={{ opacity: 0.6 }}>
                           {lang.count} repo ({lang.percentage}%)
                         </span>
                       </div>
-                      <div className="h-1.5 w-full bg-white/[0.04] rounded-full overflow-hidden border border-white/[0.04]">
+                      {/* Comic-style language progress bar */}
+                      <div
+                        className="h-2 w-full rounded overflow-hidden"
+                        style={{ background: "#f5f0e8", border: "1.5px solid #0f0e14" }}
+                      >
                         <motion.div
-                          className="h-full rounded-full"
-                          style={{
-                            background: "linear-gradient(90deg, #7c3aed, #a855f7)",
-                          }}
+                          className="h-full rounded"
+                          style={{ background: "#0f0e14" }}
                           initial={{ width: 0 }}
                           whileInView={{ width: `${lang.percentage}%` }}
                           viewport={{ once: true }}
@@ -566,7 +686,14 @@ export default function GitHubContributions() {
               )}
             </div>
 
-            <div className="mt-6 pt-3 border-t border-white/[0.04] flex items-center justify-between text-[10px] font-mono text-slate-500">
+            <div
+              className="mt-6 pt-3 flex items-center justify-between text-[10px] font-bold"
+              style={{
+                borderTop: "1.5px solid rgba(15,14,20,0.1)",
+                fontFamily: "var(--font-space)",
+                color: "rgba(15,14,20,0.5)",
+              }}
+            >
               <span>Main Stack: PHP / Laravel / TS / HTML</span>
               <span>Updated Real-Time</span>
             </div>
@@ -585,10 +712,13 @@ export default function GitHubContributions() {
             href={`https://github.com/${GITHUB_USERNAME}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 py-3.5 px-8 rounded-xl text-sm font-bold text-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            className="comic-btn inline-flex items-center gap-2.5 py-3.5 px-8 text-sm"
             style={{
-              background: "linear-gradient(135deg, #7c3aed, #a855f7)",
-              boxShadow: "0 0 28px rgba(124,58,237,0.35)",
+              fontFamily: "var(--font-nunito)",
+              background: "#0f0e14",
+              color: "#f5f0e8",
+              border: "2.5px solid #0f0e14",
+              boxShadow: "5px 5px 0 #0f0e14",
             }}
           >
             <GitCommit size={18} />

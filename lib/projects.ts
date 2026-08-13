@@ -50,7 +50,7 @@ export const projects: Project[] = [
       "Sistem Manajemen Kewenangan & Autentikasi Internal",
       "Monitoring dan Pendataan Elektronik Real-time"
     ],
-    tags: ["Laravel / CodeIgniter", "PHP", "Bootstrap", "MySQL"],
+    tags: ["Laravel", "PHP", "Bootstrap", "MySQL"],
     linkDemo: "http://156.67.221.118/gedung_negara/public/",
     role: "Web Developer",
     year: "2025",
@@ -70,7 +70,7 @@ export const projects: Project[] = [
       "Workflow Verifikasi Dokumen oleh Dinas Kabupaten",
       "Penyimpanan dan Pelacakan Status Berkas Secara Online"
     ],
-    tags: ["CodeIgniter / Laravel", "PHP", "MySQL", "Web API"],
+    tags: ["Laravel", "PHP", "MySQL", "Web API"],
     linkDemo: "https://simpbg.espacialartwork.co.id/home",
     role: "Web Developer",
     year: "2025",
